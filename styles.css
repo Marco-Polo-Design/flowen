@@ -585,13 +585,13 @@ img.arrow {
 }
 
 .small-slide-2 {
-  background-image: url(images/small-slider-2@2x.jpg);
+  background-image: url(images/small-slide-2.jpg);
   z-index: -1;
   opacity: 0;
 }
 
 .small-slide-3 {
-  background-image: url(images/home-bio-background.jpg);
+  background-image: url(images/small-slide-3.jpg);
   z-index: -1;
   opacity: 0;
 }

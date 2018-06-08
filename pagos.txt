@@ -1,0 +1,4 @@
+Pagos Flowen
+
+Pago en pesos		Cot. Dolar Compra		Cot. Dolar Venta		Pago en Dolares
+$8.600			24,4				25,4				8600 / 24,9 = 345u$d
