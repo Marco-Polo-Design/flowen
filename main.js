@@ -246,6 +246,8 @@ function openNav() {
 
       // Add background from header (for product template's)
       $('header').css('background-color', '');
+      $('header').css('background-color', '');
+
     }
   });
 }
