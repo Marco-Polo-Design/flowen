@@ -597,7 +597,7 @@ img.arrow {
 }
 
 .small-slide-4 {
-  background-image: url(images/small-slide-4@2x.png);
+  background-image: url(images/small-slide-4.jpg);
   z-index: -1;
   opacity: 0;
   background-position: center;
@@ -1041,6 +1041,7 @@ iframe {
 .product h2 {
   padding-top: 20px;
   /* width: 40%; */
+  font-size: 12.5px;
 }
 
 .product h2:after {
