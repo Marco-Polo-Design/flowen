@@ -332,6 +332,38 @@ function headerBlack() {
   })
 }
 
+function changeToBlack() {
+  $(document).on('scroll', function () {
+    // Make sure this runs only on home
+    if ($(window).width() >= 768) {
+      var waypoint = new Waypoint({
+        element: document.getElementById('details-waypoint'),
+        handler: function (direction) {
+          const pixelsFromTop = $(document).scrollTop();
+          const pixelsFromDetails = $('#details-waypoint').offset().top;
+
+          console.log(pixelsFromTop)
+          console.log(pixelsFromDetails)
+
+          if (direction === 'down' && pixelsFromTop > pixelsFromDetails - 200) {
+            // Fade to black
+            $('.has-white-background').css('background-color', 'black');
+            $('.detail-info p, .detail-name h1').css('color', "#b4965a");
+            $('.details-summary-container').css('border', "none");
+          } else {
+            // Fade to white
+            $('.has-white-background').css('background-color', 'white')
+            $('.detail-info p, .detail-name h1').css('color', "");
+            $('.details-summary-container').css('border', "1px solid #b2b2b2");
+
+
+          }
+        }
+      });
+    }
+  });
+}
+
 $(document).ready(function () {
   animateBorders();
   setTimeout(appearVariants, 1000);
@@ -346,6 +378,7 @@ $(document).ready(function () {
   navBackgroundChange();
   openNav();
   headerBlack();
+  changeToBlack();
 
   // For Rings animation
 
@@ -700,25 +733,32 @@ $(document).ready(function () {
     $(sizeClicked).addClass('size-is-active');
   });
 
-  new TypeIt('#will-be-typed', {
-    strings: 'Narratives of form, growth, transformation, extinction and fossilization',
-    speed: 100,
-    cursor: true,
-    autoStart: false
-  });
+  //if ($('.home-bio').hasClass('is-relative')) for checking if it's home
+  if ($('.home-bio').hasClass('is-relative')) {
+    new TypeIt('#will-be-typed', {
+      strings: 'Narratives of form, growth, transformation, extinction and fossilization',
+      speed: 100,
+      cursor: true,
+      autoStart: false
+    });
+  }
 });
 
 $(document).on('scroll', () => {
-  var pixels = $(document).scrollTop();
 
-  var pixelsForBio = $(document).scrollTop() - $('.js-scroll-slow-2').offset().top;
-  var pixelsForBioOK = pixelsForBio + 1300;
+  if ($('.home-bio').hasClass('is-relative')) {
+    var pixels = $(document).scrollTop();
 
-  if ($(window).width() < 1680) {
-    pixelsForBioOK = pixelsForBio + 1800;
-  } else {
-    pixelsForBioOK = pixelsForBio + 2500;
-  }
+    var pixelsForBio = $(document).scrollTop() - $('.js-scroll-slow-2').offset().top;
+    var pixelsForBioOK = pixelsForBio + 1300;
 
-  $('.js-scroll-slow-2').css('top', pixelsForBioOK * -0.195);
+    if ($(window).width() < 1680) {
+      pixelsForBioOK = pixelsForBio + 1800;
+    } else {
+      pixelsForBioOK = pixelsForBio + 2500;
+    }
+
+    $('.js-scroll-slow-2').css('top', pixelsForBioOK * -0.195);
+
+  } else {}
 });
