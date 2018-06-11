@@ -63,7 +63,7 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 99;
+  z-index: 999;
   background-color: black;
   width: 100vw;
   transition: all 0.3s 0s cubic-bezier(0.95, 0.2, 0.2, 0.95);
@@ -2359,6 +2359,14 @@ img.related-img {
   .detail-info p {
     width: 90%;
   }
+
+  .detail-name h1 {
+    margin-bottom: 10px;
+  }
+
+  .related-products-container-inner .detail .detail-name h1 {
+    margin-bottom: 30px;
+  }
   .summary-div-container:first-child {
     padding: 5px;
     padding-left: 0;
@@ -2457,6 +2465,7 @@ img.related-img {
     text-transform: none;
     letter-spacing: -0.5px;
     font-family: "Suisse Int'l";
+    font-size: 12px;
   }
   h2.product-variant-h2 {
     margin-top: 19px;
@@ -2466,6 +2475,20 @@ img.related-img {
     flex-direction: row;
     margin-left: -4vw;
     margin-right: -4vw;
+  }
+
+  .product-name p,
+  .product-chosen-options p,
+  .product-chosen-options a,
+  .product-size p,
+  .detail-info p,
+  #product-description-summary,
+  #product-sku-summary,
+  #option-1-summary,
+  #option-2-summary,
+  #size-summary,
+  #view-size-summary {
+    font-size: 13px;
   }
   .products-variants a:first-child {
     margin-left: 4vw;
@@ -2486,8 +2509,8 @@ img.related-img {
     max-width: 85px;
   }
   .product-info-inner-padding {
-    padding-right: 4vw;
-    padding-left: 4vw;
+    padding-right: 30px;
+    padding-left: 30px;
   }
   .product-variants {
     width: 100%;
@@ -2527,7 +2550,7 @@ img.related-img {
   }
   .main-img-container {
     margin: auto;
-    height: 42vh;
+    height: 55vh;
     width: 100%;
   }
   .main-img-inner {
@@ -2554,7 +2577,7 @@ img.related-img {
     padding-bottom: 3.85vh;
   }
   .add-to-cart-container {
-    height: 8vh;
+    height: 10vh;
   }
   /* Header menu elements*/
   #logo {
@@ -2704,6 +2727,11 @@ img.related-img {
   }
   .home-bio {
     height: 100%;
+  }
+
+  .details-aob-container {
+    padding-left: 30px;
+    padding-right: 30px;
   }
 }
 
