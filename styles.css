@@ -2355,6 +2355,10 @@ img.related-img {
     align-items: center;
     height: 100%;
   }
+
+  .detail-info p {
+    width: 90%;
+  }
   .summary-div-container:first-child {
     padding: 5px;
     padding-left: 0;
@@ -2479,7 +2483,7 @@ img.related-img {
     width: 100%;
   }
   .product-variant img {
-    max-width: 65px;
+    max-width: 85px;
   }
   .product-info-inner-padding {
     padding-right: 4vw;

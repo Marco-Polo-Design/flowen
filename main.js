@@ -379,7 +379,7 @@ function appearSummaryMobile() {
     if ($(window).width() < 768 && pixelsFromTop > pixelsFromSummary) {
       $('.details-summary-container').css('transform', 'translateY(-100%)')
     } else if ($(window).width() < 768 && pixelsFromTop < pixelsFromSummary) {
-      $('.details-summary-container').css('transform', '')
+      $('.details-summary-container').css('transform', 'translateY(100%)')
     }
   })
 }
