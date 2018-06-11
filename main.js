@@ -342,26 +342,46 @@ function changeToBlack() {
           const pixelsFromTop = $(document).scrollTop();
           const pixelsFromDetails = $('#details-waypoint').offset().top;
 
-          console.log(pixelsFromTop)
-          console.log(pixelsFromDetails)
 
-          if (direction === 'down' && pixelsFromTop > pixelsFromDetails - 200) {
+          if (direction === 'down' && pixelsFromTop - 100 > pixelsFromDetails) {
             // Fade to black
             $('.has-white-background').css('background-color', 'black');
-            $('.detail-info p, .detail-name h1').css('color', "#b4965a");
-            $('.details-summary-container').css('border', "none");
+            $('.detail-info p, .detail-name h1, .related-product-container a').css('color', "#b4965a");
+            $('.details-summary-container').css('border', "1px solid #000");
+
           } else {
             // Fade to white
             $('.has-white-background').css('background-color', 'white')
-            $('.detail-info p, .detail-name h1').css('color', "");
+            $('.detail-info p, .detail-name h1, .related-product-container a').css('color', "");
             $('.details-summary-container').css('border', "1px solid #b2b2b2");
 
 
           }
         }
       });
+    } else if ($('.has-white-background').hasClass('is-fixed')) {
+      $("body").css('background-color', '#fff');
+
     }
   });
+}
+
+
+function appearSummaryMobile() {
+
+  $(document).on('scroll', () => {
+    const pixelsFromTop = $(document).scrollTop();
+    const pixelsFromSummary = $('.details-inner').offset().top;
+
+    console.log(pixelsFromTop);
+    console.log(pixelsFromSummary)
+
+    if ($(window).width() < 768 && pixelsFromTop > pixelsFromSummary) {
+      $('.details-summary-container').css('transform', 'translateY(-100%)')
+    } else if ($(window).width() < 768 && pixelsFromTop < pixelsFromSummary) {
+      $('.details-summary-container').css('transform', '')
+    }
+  })
 }
 
 $(document).ready(function () {
@@ -379,6 +399,7 @@ $(document).ready(function () {
   openNav();
   headerBlack();
   changeToBlack();
+  appearSummaryMobile();
 
   // For Rings animation
 
