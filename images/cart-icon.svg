@@ -1,29 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="-5728 110 14.628 19.352">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-1092.078 4119.876 14.807 19.895">
   <defs>
     <style>
       .cls-1 {
-        fill: #b4965a;
-      }
-
-      .cls-2, .cls-4 {
         fill: none;
-      }
-
-      .cls-2 {
         stroke: #b4965a;
+        stroke-miterlimit: 10;
         stroke-width: 1.5px;
-      }
-
-      .cls-3 {
-        stroke: none;
       }
     </style>
   </defs>
-  <g id="Group_31" data-name="Group 31" transform="translate(-6951 48.176)">
-    <rect id="Rectangle_1" data-name="Rectangle 1" class="cls-1" width="14.628" height="14.536" transform="translate(1223 66.64)"/>
-    <g id="Rectangle_2" data-name="Rectangle 2" class="cls-2" transform="translate(1226 61.824)">
-      <rect class="cls-3" width="8.904" height="8.088"/>
-      <rect class="cls-4" x="0.75" y="0.75" width="7.404" height="6.588"/>
-    </g>
+  <g id="Group_593" data-name="Group 593" transform="translate(-2344 4021)">
+    <path id="Path_316" data-name="Path 316" class="cls-1" d="M15.222,42.807H5.085A1.579,1.579,0,0,1,3.5,41.222V29.5H16.807V41.222A1.579,1.579,0,0,1,15.222,42.807Z" transform="translate(1249.172 75.214)"/>
+    <path id="Path_317" data-name="Path 317" class="cls-1" d="M18.5,12.306V7.61A3.857,3.857,0,0,1,22.042,3.5h.352a3.857,3.857,0,0,1,3.542,4.11v4.7" transform="translate(1237.107 96.126)"/>
   </g>
 </svg>

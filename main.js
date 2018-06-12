@@ -626,7 +626,7 @@ $(document).ready(function () {
 
       // make the .main-img-inner-scroll-inner overflow: scroll
 
-      $('.main-img-inner-scroll-inner').css('overflow-y', 'scroll');
+      $('.main-img-inner-scroll-inner').css('overflow', 'scroll');
 
       //show the "scroll" at the bottom
       $('.scroll-img p').css('opacity', '1');
@@ -721,7 +721,7 @@ $(document).ready(function () {
 
       // make the .main-img-inner-scroll-inner overflow: hidden
 
-      $('.main-img-inner-scroll-inner').css('overflow-y', 'hidden');
+      $('.main-img-inner-scroll-inner').css('overflow', 'hidden');
 
       // Revert Original img
 
