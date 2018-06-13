@@ -6,7 +6,7 @@ function animateBorders() {
 function appearVariants() {
   const productVariants = document.querySelectorAll('.product-variants a');
 
-  productVariants.forEach(function (productVariants, index) {
+  productVariants.forEach(function(productVariants, index) {
     const delay = index * 100;
     productVariants.style.transitionDelay = delay + 'ms';
   });
@@ -20,7 +20,7 @@ function appearRest() {
     '.product-info-inner, .product-name-container, .product-chosen-container, .product-size-container, .add-to-cart-container'
   );
 
-  everythingButLines.forEach(function (everythingButLines, index) {
+  everythingButLines.forEach(function(everythingButLines, index) {
     const delay = index * 120;
     // everythingButLines.style.transitionDelay = delay + 'ms';
     // everythingButLines.style.WebkitTransitionDelay = delay + 'ms';
@@ -41,38 +41,36 @@ function animateProductLines() {
   // Remove animations if widow is bigger than iPad Mini Version
   if ($(window).width() >= 768) {
     $(productChosenLines).removeClass('animate-left');
-  } else {}
+  } else {
+  }
 
   if ($(window).width() <= 768) {
     $('.is-second-border').css('transform', 'scaleX(1)');
-  } else {}
+  } else {
+  }
 
   if ($(window).width() <= 414) {
     $('.is-first-border').css('transform', 'scaleX(1)');
-  } else {}
+  } else {
+  }
 }
 
 function addBigContainer() {
   $('.big-slide-container').addClass('slider-animation-appear');
 }
 
-
 var currentCTA = 0;
 
 function animateProductCTA() {
-
-
   const ctas = document.querySelectorAll('.cta-button');
 
-  var cta = ctas[currentCTA]
-  var nextCTA = ctas[currentCTA + 1]
+  var cta = ctas[currentCTA];
+  var nextCTA = ctas[currentCTA + 1];
 
-
-  ctas.forEach(function (ctas, index) {
-    $(cta).css('transform', 'translateY(-100%)')
-    $(nextCTA).css('transform', 'translateY(100%)')
-  })
-
+  ctas.forEach(function(ctas, index) {
+    $(cta).css('transform', 'translateY(-100%)');
+    $(nextCTA).css('transform', 'translateY(100%)');
+  });
 }
 
 var currentSlide = 0;
@@ -90,7 +88,7 @@ function animateBigSlides() {
 
   currentSlide = currentSlide + 1;
 
-  slides.forEach(function (slides, index) {
+  slides.forEach(function(slides, index) {
     $(slide).addClass('is-current-slide');
     $(slide).removeClass('is-not-current');
     $(lastSlide).removeClass('is-current-slide');
@@ -101,8 +99,6 @@ function animateBigSlides() {
     $(slide).addClass('slider-image-scale-appear');
     $(nextSlide).addClass('slider-image-scale-reverse');
     $(nextSlide).addClass('will-be-current');
-
-
 
     // las clases se van sacando con previousSlide y slide, se deja el lastslide para el loop cuando vuelve a empezar. hay que sacarle el currentslide porque al loopear no entra en la categoría de previousSlide, entonces se hace una clase especial para este último elemento.
   });
@@ -132,6 +128,27 @@ function animateBigSlides() {
   }
 }
 
+function animateBigSlidesNew() {
+  const bigSlides = document.querySelectorAll('.big-slide-img-container-inner');
+
+  var previousBigSlide = bigSlides[currentSlide - 1];
+  var bigSlide = bigSlides[currentSlide];
+  var nextBigSlide = bigSlides[currentSlide + 1];
+  var firstBigSlide = $(bigSlides).first();
+  var lastBigSlide = $(bigSlides).last();
+
+  const images = document.querySelectorAll('.big-slide-img');
+  var nextImage = images[currentSlide + 1];
+
+  currentSlide = currentSlide + 1;
+
+  bigSlides.forEach(function(bigSlides, index) {
+    $(bigSlide).css('left', '100%');
+    $(nextImage).addClass('slider-image-scale-reverse');
+    $(bigSlides).css('transition', '');
+  });
+}
+
 currentSmallSlide = 0;
 
 function animateSmallSlides() {
@@ -147,7 +164,7 @@ function animateSmallSlides() {
 
   currentSmallSlide = currentSmallSlide + 1;
 
-  smallSlides.forEach(function (smallSlides, index) {
+  smallSlides.forEach(function(smallSlides, index) {
     $(smallSlide).addClass('small-slider-fade-out');
     $(nextSmallSlide).addClass('small-slider-fade-in');
 
@@ -185,7 +202,7 @@ function animatePhrases() {
 
   currentPhrase = currentPhrase + 1;
 
-  phrases.forEach(function (phrases, index) {
+  phrases.forEach(function(phrases, index) {
     $(previousPhrase).addClass('was-active-y');
     // $(previousPreviousPhrase).removeClass('was-active-y');
     $(phrase).removeClass('was-active-y');
@@ -215,7 +232,7 @@ function openNav() {
   function linksUp() {
     const mainLinks = document.querySelectorAll('.nav-main-links-inner ul li a div p');
 
-    mainLinks.forEach(function (mainLinks, index) {
+    mainLinks.forEach(function(mainLinks, index) {
       const delay = index * 50;
       mainLinks.style.transitionDelay = delay + 500 + 'ms';
     });
@@ -268,7 +285,6 @@ function openNav() {
       // Add background from header (for product template's)
       $('header').css('background-color', '');
       $('header').css('background-color', '');
-
     }
   });
 }
@@ -279,10 +295,10 @@ function navBackgroundChange() {
 
   const navBackgrounds = document.querySelectorAll('.home-link-bcgd');
 
-  $(navLinks).mouseout(function () {
+  $(navLinks).mouseout(function() {
     $(navBackgrounds).css('opacity', '0');
 
-    navLinks.forEach(function (navLinks, index) {
+    navLinks.forEach(function(navLinks, index) {
       const delay = index * 50;
       navLinks.style.transitionDelay = delay + 'ms';
     });
@@ -291,142 +307,117 @@ function navBackgroundChange() {
   });
 
   $('.home-link')
-    .mouseover(function () {
+    .mouseover(function() {
       $('.for-home').css('opacity', '1');
     })
-    .mouseout(function () {
+    .mouseout(function() {
       $(navBackgrounds).css('opacity', '0');
     });
 
   $('.new-arrivals-link')
-    .mouseover(function () {
+    .mouseover(function() {
       $('.for-new-arrivals').css('opacity', '1');
     })
-    .mouseout(function () {
+    .mouseout(function() {
       $(navBackgrounds).css('opacity', '0');
     });
 
   $('.earings-link')
-    .mouseover(function () {
+    .mouseover(function() {
       $('.for-earings').css('opacity', '1');
     })
-    .mouseout(function () {
+    .mouseout(function() {
       $(navBackgrounds).css('opacity', '0');
     });
 
   $('.pendants-link')
-    .mouseover(function () {
+    .mouseover(function() {
       $('.for-pendants').css('opacity', '1');
     })
-    .mouseout(function () {
+    .mouseout(function() {
       $(navBackgrounds).css('opacity', '0');
     });
 
   $('.bags-link')
-    .mouseover(function () {
+    .mouseover(function() {
       $('.for-bags').css('opacity', '1');
     })
-    .mouseout(function () {
+    .mouseout(function() {
       $(navBackgrounds).css('opacity', '0');
     });
 
   $('.limited-release-link')
-    .mouseover(function () {
+    .mouseover(function() {
       $('.for-limited-release').css('opacity', '1');
     })
-    .mouseout(function () {
+    .mouseout(function() {
       $(navBackgrounds).css('opacity', '0');
     });
 }
 
 function headerBlack() {
-  $(document).on("scroll", () => {
-
+  $(document).on('scroll', () => {
     const pixelsForHeader = $(document).scrollTop();
 
     if ($(window).width() < 414 && pixelsForHeader > 130) {
-      $("header").css('background-color', '#000')
+      $('header').css('background-color', '#000');
     } else if (pixelsForHeader == 0) {
-      $("header").css('background-color', '')
-
-    }
-  })
-}
-
-function changeToBlack() {
-  $(document).on('scroll', function () {
-    // Make sure this runs only on home
-    if ($(window).width() >= 768) {
-      var waypoint = new Waypoint({
-        element: document.getElementById('details-waypoint'),
-        handler: function (direction) {
-          const pixelsFromTop = $(document).scrollTop();
-          const pixelsFromDetails = $('#details-waypoint').offset().top;
-
-
-          if (direction === 'down' && pixelsFromTop - 100 > pixelsFromDetails) {
-            // Fade to black
-            $('.has-white-background').css('background-color', 'black');
-            $('.detail-info p, .detail-name h1, .related-product-container a').css('color', "#b4965a");
-            $('.details-summary-container').css('border', "1px solid #000");
-
-          } else {
-            // Fade to white
-            $('.has-white-background').css('background-color', 'white')
-            $('.detail-info p, .detail-name h1, .related-product-container a').css('color', "");
-            $('.details-summary-container').css('border', "1px solid #b2b2b2");
-
-
-          }
-        }
-      });
-    } else if ($('.has-white-background').hasClass('is-fixed')) {
-      $("body").css('background-color', '#fff');
-
+      $('header').css('background-color', '');
     }
   });
 }
 
+function changeToBlack() {
+  $(document).on('scroll', function() {
+    // Make sure this runs only on home
+    if ($(window).width() >= 768) {
+      var waypoint = new Waypoint({
+        element: document.getElementById('details-waypoint'),
+        handler: function(direction) {
+          const pixelsFromTop = $(document).scrollTop();
+          const pixelsFromDetails = $('#details-waypoint').offset().top;
+
+          if (direction === 'down' && pixelsFromTop - 100 > pixelsFromDetails) {
+            // Fade to black
+            $('.has-white-background').css('background-color', 'black');
+            $('.detail-info p, .detail-name h1, .related-product-container a').css(
+              'color',
+              '#b4965a'
+            );
+            $('.details-summary-container').css('border', '1px solid #000');
+          } else {
+            // Fade to white
+            $('.has-white-background').css('background-color', 'white');
+            $('.detail-info p, .detail-name h1, .related-product-container a').css('color', '');
+            $('.details-summary-container').css('border', '1px solid #b2b2b2');
+          }
+        }
+      });
+    } else if ($('.has-white-background').hasClass('is-fixed')) {
+      $('body').css('background-color', '#fff');
+    }
+  });
+}
 
 function appearSummaryMobile() {
-
   $(document).on('scroll', () => {
     const pixelsFromTop = $(document).scrollTop();
     const pixelsFromSummary = $('.details-inner').offset().top;
 
     console.log(pixelsFromTop);
-    console.log(pixelsFromSummary)
+    console.log(pixelsFromSummary);
 
     if ($(window).width() < 768 && pixelsFromTop > pixelsFromSummary) {
-      $('.details-summary-container').css('transform', 'translateY(-100%)')
+      $('.details-summary-container').css('transform', 'translateY(-100%)');
     } else if ($(window).width() < 768 && pixelsFromTop < pixelsFromSummary) {
-      $('.details-summary-container').css('transform', 'translateY(100%)')
+      $('.details-summary-container').css('transform', 'translateY(100%)');
     }
-  })
+  });
 }
 
-$(document).ready(function () {
-  animateBorders();
-  setTimeout(appearVariants, 1000);
-  setTimeout(animateProductLines, 1750);
-  setTimeout(appearRest, 1750);
-
-  setInterval(addBigContainer, 6000);
-  setInterval(animateBigSlides, 6000);
-  setInterval(animatePhrases, 6000);
-  setInterval(animateSmallSlides, 6000);
-  setInterval(animateProductCTA, 6000);
-
-  navBackgroundChange();
-  openNav();
-  headerBlack();
-  changeToBlack();
-  appearSummaryMobile();
-
-  // For Rings animation
-
+function collectionsHover() {
   $('div.product-img.is-rings.is-absolute')
-    .mouseover(function () {
+    .mouseover(function() {
       $('.product-phi-circle span')
         .first()
         .addClass('span-is-bigger');
@@ -443,7 +434,7 @@ $(document).ready(function () {
           transition: 'scale 0.2s 0.4s, opacity 0.4s 0.2s cubic-bezier(0.95, 0.2, 0.2, 0.95)'
         });
     })
-    .mouseout(function () {
+    .mouseout(function() {
       $('.product-phi-circle span')
         .first()
         .removeClass('span-is-bigger');
@@ -461,7 +452,7 @@ $(document).ready(function () {
   // for Earrings collections home
 
   $('div.product-img.is-earrings.is-absolute')
-    .mouseover(function () {
+    .mouseover(function() {
       $('.product-phi-circle span')
         .eq(1)
         .addClass('span-is-bigger');
@@ -481,7 +472,7 @@ $(document).ready(function () {
       //   .eq(1)
       //   .css('transition-delay', '0');
     })
-    .mouseout(function () {
+    .mouseout(function() {
       // $('.product-phi-circle span')
       //   .eq(1)
       //   .css('transition-delay', '0.s');
@@ -505,7 +496,7 @@ $(document).ready(function () {
   // for Pendants collections home
 
   $('div.product-img.is-pendants.is-absolute')
-    .mouseover(function () {
+    .mouseover(function() {
       $('.product-phi-circle span')
         .eq(2)
         .addClass('span-is-bigger');
@@ -522,7 +513,7 @@ $(document).ready(function () {
       //   .eq(2)
       //   .css('transition-delay', '0');
     })
-    .mouseout(function () {
+    .mouseout(function() {
       // $('.product-phi-circle span')
       //   .eq(2)
       //   .css('transition-delay', '0.s');
@@ -542,7 +533,7 @@ $(document).ready(function () {
 
   // for Limited collections home
   $('div.product-img.is-limited.is-absolute')
-    .mouseover(function () {
+    .mouseover(function() {
       $('.product-phi-circle span')
         .eq(3)
         .addClass('span-is-bigger');
@@ -559,7 +550,7 @@ $(document).ready(function () {
       //   .eq(2)
       //   .css('transition-delay', '0');
     })
-    .mouseout(function () {
+    .mouseout(function() {
       // $('.product-phi-circle span')
       //   .eq(2)
       //   .css('transition-delay', '0.s');
@@ -578,7 +569,9 @@ $(document).ready(function () {
     });
 
   // End product hover img\
+}
 
+function openProductChosen() {
   windowWidth = $(window).width;
 
   // Desktop animations for prduct variant selection
@@ -775,6 +768,30 @@ $(document).ready(function () {
     //make the active class get the is-active class
     $(sizeClicked).addClass('size-is-active');
   });
+}
+
+$(document).ready(function() {
+  animateBorders();
+  setTimeout(appearVariants, 1000);
+  setTimeout(animateProductLines, 1750);
+  setTimeout(appearRest, 1750);
+
+  // setInterval(addBigContainer, 6000);
+  // setInterval(animateBigSlides, 6000);
+  setInterval(animatePhrases, 6000);
+  setInterval(animateSmallSlides, 6000);
+  // setInterval(animateProductCTA, 6000);
+  setInterval(animateBigSlidesNew, 6000);
+
+  navBackgroundChange();
+  openNav();
+  headerBlack();
+  // changeToBlack();
+  appearSummaryMobile();
+  collectionsHover();
+  openProductChosen();
+
+  // For Rings animation
 
   //if ($('.home-bio').hasClass('is-relative')) for checking if it's home
   if ($('.home-bio').hasClass('is-relative')) {
@@ -788,7 +805,6 @@ $(document).ready(function () {
 });
 
 $(document).on('scroll', () => {
-
   if ($('.home-bio').hasClass('is-relative')) {
     var pixels = $(document).scrollTop();
 
@@ -802,6 +818,6 @@ $(document).on('scroll', () => {
     }
 
     $('.js-scroll-slow-2').css('top', pixelsForBioOK * -0.195);
-
-  } else {}
+  } else {
+  }
 });
