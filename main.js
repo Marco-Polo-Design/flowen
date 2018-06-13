@@ -56,6 +56,25 @@ function addBigContainer() {
   $('.big-slide-container').addClass('slider-animation-appear');
 }
 
+
+var currentCTA = 0;
+
+function animateProductCTA() {
+
+
+  const ctas = document.querySelectorAll('.cta-button');
+
+  var cta = ctas[currentCTA]
+  var nextCTA = ctas[currentCTA + 1]
+
+
+  ctas.forEach(function (ctas, index) {
+    $(cta).css('transform', 'translateY(-100%)')
+    $(nextCTA).css('transform', 'translateY(100%)')
+  })
+
+}
+
 var currentSlide = 0;
 
 function animateBigSlides() {
@@ -82,6 +101,8 @@ function animateBigSlides() {
     $(slide).addClass('slider-image-scale-appear');
     $(nextSlide).addClass('slider-image-scale-reverse');
     $(nextSlide).addClass('will-be-current');
+
+
 
     // las clases se van sacando con previousSlide y slide, se deja el lastslide para el loop cuando vuelve a empezar. hay que sacarle el currentslide porque al loopear no entra en la categoría de previousSlide, entonces se hace una clase especial para este último elemento.
   });
@@ -394,6 +415,7 @@ $(document).ready(function () {
   setInterval(animateBigSlides, 6000);
   setInterval(animatePhrases, 6000);
   setInterval(animateSmallSlides, 6000);
+  setInterval(animateProductCTA, 6000);
 
   navBackgroundChange();
   openNav();
