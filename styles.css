@@ -229,7 +229,10 @@ header {
   height: 13.5px;
 }
 
-.is-cart-toggle img {
+.is-cart-toggle img,
+.product-nav-search img,
+.product-nav-filter img,
+.product-nav-views img {
   height: 20px;
 }
 
@@ -405,8 +408,7 @@ ul.main-links {
   margin-bottom: 7.5vh;
 }
 
-.sub-links-inner {
-}
+.sub-links-inner {}
 
 .sub-link {
   margin-bottom: 20px;
@@ -502,15 +504,13 @@ h1.h1-button-slider {
 img.arrow {
   height: 12px;
   opacity: 0;
-  transition: opacity 0.3s 0s, margin-right 0.3s 0s,
-    display 0.3s 0.3s cubic-bezier(0.95, 0.2, 0.2, 0.95);
+  transition: opacity 0.3s 0s, margin-right 0.3s 0s, display 0.3s 0.3s cubic-bezier(0.95, 0.2, 0.2, 0.95);
 }
 
 .product-button:hover img.arrow {
   opacity: 1;
   margin-right: 10px;
-  transition: opacity 0.3s 0.3s, margin-right 0.3s 0s,
-    display 0.3s 0.3s cubic-bezier(0.95, 0.2, 0.2, 0.95);
+  transition: opacity 0.3s 0.3s, margin-right 0.3s 0s, display 0.3s 0.3s cubic-bezier(0.95, 0.2, 0.2, 0.95);
 }
 
 .product-button:hover {
@@ -529,8 +529,7 @@ img.arrow {
 
 /* Content for Home */
 
-.intro {
-}
+.intro {}
 
 .home-slider {
   height: 100vh;
@@ -558,7 +557,7 @@ img.arrow {
   opacity: 1;
   width: 100%;
   height: 100%;
-  transition: all 0.4s cubic-bezier(1, 0.03, 0, 1.01);
+  transition: all 0.8s cubic-bezier(1, 0.03, 0, 1.01);
   position: absolute;
   top: 0;
   left: 0;
@@ -572,7 +571,7 @@ img.arrow {
   background-repeat: no-repeat;
   width: 100%;
   height: 100%;
-  transition: all 0.4s cubic-bezier(0.09, 1.05, 0.63, 1.03);
+  transition: all 1.2s cubic-bezier(0.09, 1.05, 0.63, 1.03);
   position: absolute;
 }
 
@@ -585,10 +584,25 @@ img.arrow {
 }
 
 .big-slide-img {
-  left: 0;
+  /* left: 0;
   background-attachment: fixed;
-  background-size: 68% auto;
+  background-size: cover;
   background-position: 100%;
+  */
+  width: 0;
+  transform-origin: right;
+  position: absolute;
+  height: 100%;
+  overflow: hidden;
+}
+
+.big-slide-img img {
+  min-height: 100%;
+  min-width: 68%;
+  height: 100%;
+  width: auto;
+  position: absolute;
+  max-width: unset;
 }
 
 .small-slide-img {
@@ -662,31 +676,21 @@ img.arrow {
   animation-fill-mode: forwards;
 }
 
-.big-slide-1 {
-  background-image: url(images/big-slider-1@2xA.jpg);
-  transition-duration: 1s;
-  top: 0;
-  /* transform: scale(1.2); */
-  transition: all 0.4s cubic-bezier(0.78, 0.51, 0.35, 0.96);
+.big-slide-4 {
   z-index: 3;
 }
 
-.big-slide-2 {
-  background-image: url(images/big-slider-2b@2x.jpg);
-  top: 0%;
+.big-slide-3 {
   z-index: 2;
 }
 
-.big-slide-3 {
-  background-image: url(images/big-slider-3@2xOK.jpg);
-  top: 0%;
+.big-slide-2 {
   z-index: 1;
 }
 
-.big-slide-4 {
-  background-image: url(images/big-slider-4@2xOK.jpg);
-  top: 0%;
+.big-slide-1 {
   z-index: 0;
+  width: 100%;
 }
 
 @keyframes big-slider-appear {
@@ -789,7 +793,6 @@ si quiero que dure 3.5s cada una, hay que sumarle 2.5s ( animacion in + animaci√
   0% {
     transform: scale(1.1);
   }
-
   100% {
     transform: scale(1);
   }
@@ -797,7 +800,7 @@ si quiero que dure 3.5s cada una, hay que sumarle 2.5s ( animacion in + animaci√
 
 .slider-image-scale-reverse {
   animation-name: big-image-scale-reverse;
-  animation-duration: 1s;
+  animation-duration: 1.5s;
   /* animation-delay: 1.5s; */
   animation-fill-mode: forwards;
   /* animation-timing-function: cubic-bezier(0.78, 0.51, 0.35, 0.96); */
@@ -1015,7 +1018,6 @@ video {
   /* min-height: 100vh; */
   top: 0;
   left: 0;
-
   width: 100%;
   height: auto;
   /* top: 50%;
@@ -1519,6 +1521,125 @@ div.journal:last-child {
   animation: pulse 5s linear infinite;
   animation-timing-function:  ease-in;
 } */
+
+/* Star Products-Grid content */
+
+.product-nav-bar-container {
+  background-color: black;
+  top: 14.5vh;
+}
+
+.search-container {
+  flex: auto;
+}
+
+.product-nav-bar-container:before,
+.product-nav-bar-container:after {
+  width: 100%;
+  height: 1px;
+  background-color: #b4965a;
+  content: '';
+  position: absolute;
+  left: 0;
+  transition: all 0.5s cubic-bezier(0.95, 0.25, 0.25, 0.95)
+}
+
+/* Falta hacer el scaleX: 0, y agregarle una class a .product-nav-bar-container.will-scale:after {transform: scaleX(1)} */
+
+.product-nav-bar-container:before {
+  top: 0;
+}
+
+.product-nav-inner:last-child::after {
+  width: 0;
+}
+
+.product-nav-bar-container:after {
+  bottom: 0;
+}
+
+.product-nav-inner div {
+  height: 100%;
+}
+
+.product-nav-padding {
+  padding: 30px 0;
+}
+
+.padding-nav-inner {
+  padding-right: 4vw;
+  padding-left: 4vw;
+}
+
+.padding-nav-inner:after {
+  background-color: #b4965a;
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 1px;
+  transition: all 0.5s cubic-bezier(0.95, 0.25, 0.25, 0.95);
+}
+
+.product-nav-search p,
+.product-nav-filter p {
+  margin-left: 10px;
+}
+
+section.products-grid {
+  margin-top: 30vh;
+}
+
+.grid-product {
+  background-size: 115%;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 26%;
+  margin: 40px;
+}
+
+.grid-product img {
+  width: auto;
+  margin: 150px auto;
+  height: 180px;
+}
+
+.product-nav-views img {
+  opacity: 0.4;
+  transition: all 0.3s cubic-bezier(0.95, 0.25, 0.25, 0.95);
+  cursor: pointer;
+}
+
+img.is-active-opacity {
+  opacity: 1;
+}
+
+.product-nav-views img:hover {
+  opacity: 1;
+}
+
+.product-nav-views img:last-child {
+  margin-left: 40px;
+}
+
+.radix-xray {
+  background-image: url(images/grid-xray-radix@2x.png)
+}
+
+.moxi-xray {
+  background-image: url(images/grid-xray-moxi@2x.png)
+}
+
+.vik-xray {
+  background-image: url(images/grid-xray-vik@2x.png)
+}
+
+.dna1-xray {
+  background-image: url(images/grid-xray-dna1@2x.png)
+}
+
+/* Start Product-Template Content */
 
 .has-white-background {
   background-color: white;
@@ -2151,7 +2272,6 @@ a#view-size-summary {
 
 .summary-div-addtocart {
   padding: 0;
-
   background-color: black;
 }
 
@@ -2291,6 +2411,16 @@ img.related-img {
   .sub-link a {
     font-size: 14px;
   }
+  .grid-container {
+    margin-left: 4vw;
+    margin-right: 4vw;
+  }
+  .grid-product {
+    background-size: 90%;
+  }
+  .grid-product img {
+    height: 140px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -2398,7 +2528,6 @@ img.related-img {
     z-index: 99;
     transition: all 0.5s cubic-bezier(0.95, 0.2, 0.2, 0.95);
   }
-
   .details-summary-container:after {
     transform: translateY(-100%);
     background-color: #b2b2b2;
@@ -2409,7 +2538,6 @@ img.related-img {
     width: 100%;
     height: 1px;
   }
-
   .details-summary-inner {
     flex-direction: row;
     padding: 0;
@@ -2418,15 +2546,12 @@ img.related-img {
     align-items: center;
     height: 100%;
   }
-
   .detail-info p {
     width: 90%;
   }
-
   .detail-name h1 {
     margin-bottom: 10px;
   }
-
   .related-products-container-inner .detail .detail-name h1 {
     margin-bottom: 30px;
   }
@@ -2438,12 +2563,10 @@ img.related-img {
     height: 100%;
     display: flex;
   }
-
   .summary-product div:first-child {
     width: 56%;
     margin: auto;
   }
-
   .summary-product div:last-child {
     display: none;
   }
@@ -2461,16 +2584,13 @@ img.related-img {
   .summary-div-after:not(:first-child) {
     display: none;
   }
-
   .summary-div-container {
     padding: 0;
   }
-
   .summary-addtocart-container,
   .summary-addtocart-inner {
     height: 100%;
   }
-
   .price-summary {
     padding: 25px;
   }
@@ -2504,13 +2624,11 @@ img.related-img {
     width: 100%;
     margin-right: 0;
   }
-
   .main-img-inner-scroll-inner {
     display: flex;
     flex-direction: row;
     width: auto;
   }
-
   .main-img-inner-img {
     min-width: 100vw;
   }
@@ -2553,7 +2671,6 @@ img.related-img {
     margin-left: -4vw;
     margin-right: -4vw;
   }
-
   .product-name p,
   .product-chosen-options p,
   .product-chosen-options a,
@@ -2595,17 +2712,13 @@ img.related-img {
     margin-top: 0px;
     display: flex;
   }
-
   /* sin breadcrumbs arriba de todo *hay que cambiar el margin-top de product-variants (esta arriba de esto) a 50px si no se usa */
-
   .product-info-inner {
     display: none;
   }
-
   .is-second-border {
     display: none;
   }
-
   .product-variants-inner {
     margin-top: auto;
     margin-bottom: auto;
@@ -2817,10 +2930,26 @@ img.related-img {
   .home-bio {
     height: 100%;
   }
-
   .details-aob-container {
     padding-left: 30px;
     padding-right: 30px;
+  }
+  .big-slide-img {
+    height: 0;
+    width: 100%;
+  }
+  .big-slide-1 {
+    height: 100%;
+  }
+  /* cambios para las img en responsive! Sino se estira raro cuando cambias el container de 0 height a 100 height  */
+  .big-slide-img img {
+    min-height: 100%;
+    min-width: 100vh;
+    height: auto;
+    width: 100%;
+    position: absolute;
+    max-width: unset;
+    left: -23%;
   }
 }
 
