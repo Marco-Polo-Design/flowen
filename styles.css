@@ -229,11 +229,14 @@ header {
   height: 13.5px;
 }
 
-.is-cart-toggle img,
 .product-nav-search img,
 .product-nav-filter img,
 .product-nav-views img {
-  height: 20px;
+  height: 23px;
+}
+
+.is-cart-toggle img {
+  width: 17px;
 }
 
 #logo {
@@ -1527,6 +1530,7 @@ div.journal:last-child {
 .product-nav-bar-container {
   background-color: black;
   top: 14.5vh;
+  z-index: 9;
 }
 
 .search-container {
@@ -1541,7 +1545,7 @@ div.journal:last-child {
   content: '';
   position: absolute;
   left: 0;
-  transition: all 0.5s cubic-bezier(0.95, 0.25, 0.25, 0.95)
+  transition: all 0.5s cubic-bezier(0.95, 0.25, 0.25, 0.95);
 }
 
 /* Falta hacer el scaleX: 0, y agregarle una class a .product-nav-bar-container.will-scale:after {transform: scaleX(1)} */
@@ -1563,7 +1567,7 @@ div.journal:last-child {
 }
 
 .product-nav-padding {
-  padding: 30px 0;
+  padding: 20px 0;
 }
 
 .padding-nav-inner {
@@ -1592,17 +1596,64 @@ section.products-grid {
 }
 
 .grid-product {
-  background-size: 115%;
+  background-size: 100%;
   background-repeat: no-repeat;
   background-position: center;
-  width: 26%;
-  margin: 40px;
+  width: 30%;
 }
 
 .grid-product img {
   width: auto;
+  height: 130px;
+  transition: all 0.2s 0.2s cubic-bezier(0.95, 0.25, 0.25, 0.95)
+}
+
+.grid-product-inner {
   margin: 150px auto;
-  height: 180px;
+}
+
+.grid-product-info {
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -45%);
+  opacity: 0;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  transition: all 0.2s cubic-bezier(0.95, 0.25, 0.25, 0.95)
+}
+
+.grid-product-name-container {
+  background-color: #b4965a;
+  padding: 3px 5px;
+  margin-bottom: 10px;
+}
+
+.grid-product-name-container p {
+  color: black;
+  font-size: 20px;
+}
+
+.grid-product-image:hover .grid-product-info {
+  opacity: 1;
+  transition: all 0.2s 0.2s cubic-bezier(0.95, 0.25, 0.25, 0.95)
+}
+
+.grid-product-image:hover img#main-image {
+  opacity: 0;
+  transition: all 0.2s cubic-bezier(0.95, 0.25, 0.25, 0.95)
+}
+
+img#main-image:hover {
+  opacity: 0;
+}
+
+.grid-product-related img {
+  height: 60px;
+  margin: 0;
+  margin-top: 20px;
 }
 
 .product-nav-views img {
@@ -1620,23 +1671,23 @@ img.is-active-opacity {
 }
 
 .product-nav-views img:last-child {
-  margin-left: 40px;
+  margin-left: 20px;
 }
 
 .radix-xray {
-  background-image: url(images/grid-xray-radix@2x.png)
+  background-image: url(images/grid-xray-radix@2x.png);
 }
 
 .moxi-xray {
-  background-image: url(images/grid-xray-moxi@2x.png)
+  background-image: url(images/grid-xray-moxi@2x.png);
 }
 
 .vik-xray {
-  background-image: url(images/grid-xray-vik@2x.png)
+  background-image: url(images/grid-xray-vik@2x.png);
 }
 
 .dna1-xray {
-  background-image: url(images/grid-xray-dna1@2x.png)
+  background-image: url(images/grid-xray-dna1@2x.png);
 }
 
 /* Start Product-Template Content */
@@ -2368,7 +2419,7 @@ img.related-img {
   text-align: center;
 }
 
-@media (min-height: 800px) {
+@media (min-height: 900px) {
   ul.main-links {
     flex: 1;
   }
@@ -2379,13 +2430,13 @@ img.related-img {
   #logo img {
     width: 9vw;
   }
-  .contaner {
+  .contanier {
     padding-right: 20.5vw;
     padding-left: 20.5vw;
   }
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 1460px) {
   .phrases div.small-h1 div h1 {
     font-size: inherit;
   }
@@ -2420,6 +2471,14 @@ img.related-img {
   }
   .grid-product img {
     height: 140px;
+  }
+  .grid-product {
+    margin: 40px;
+    width: 26%;
+    position: relative;
+  }
+  .grid-product:hover {
+    opacity: 0.6;
   }
 }
 
@@ -2631,6 +2690,9 @@ img.related-img {
   }
   .main-img-inner-img {
     min-width: 100vw;
+  }
+  .grid-product {
+    width: 50%;
   }
 }
 
@@ -2950,6 +3012,24 @@ img.related-img {
     position: absolute;
     max-width: unset;
     left: -23%;
+  }
+  .grid-product {
+    width: 100%;
+  }
+  .product-nav-collection,
+  .product-nav-views {
+    display: none;
+  }
+  .product-nav-filter,
+  .product-nav-search {
+    justify-content: center;
+  }
+  .product-nav-bar-inner div:nth-child(2),
+  .product-nav-bar-inner div:nth-child(3) {
+    flex: auto;
+  }
+  .product-nav-bar-inner div:nth-child(4) {
+    display: none;
   }
 }
 
