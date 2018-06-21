@@ -688,7 +688,7 @@ function openProductChosen() {
           display: 'none',
           'max-width': '350px'
         })
-        .attr('src', 'images/product-test-big@2x.png');
+        .attr('src', 'images/grid-radix@2x.png');
       $('#featured-img').fadeIn(500);
 
       //
@@ -724,7 +724,7 @@ function openProductChosen() {
           display: 'none',
           'max-width': '280px'
         })
-        .attr('src', 'images/product-test-big@2x.png');
+        .attr('src', 'images/grid-radix@2x.png');
 
       $('#featured-img').fadeIn(500);
 
@@ -777,7 +777,7 @@ function openProductChosen() {
           'max-width': '400px'
         })
         .attr({
-          src: 'images/exo@2x.jpg'
+          src: 'images/radix-xray@2x.png'
         });
 
       $('#featured-img').fadeIn(500);
@@ -814,7 +814,7 @@ function openProductChosen() {
           'max-width': '280px'
         })
         .attr({
-          src: 'images/exo@2x.jpg'
+          src: 'images/radix-xray@2x.png'
         });
       $('#featured-img').fadeIn(500);
 
@@ -836,19 +836,40 @@ function openProductChosen() {
   });
 }
 
+
+
+function hideLogo() {
+
+  let prevScroll = 0
+
+  $(document).on('scroll', () => {
+
+    const currentScroll = $(document).scrollTop()
+    const initialScroll = $(document).scrollTop()
+
+
+    if (currentScroll > prevScroll && $('.home-bio').hasClass('is-relative')) {
+      $('#Path_5, #Path_6, #Path_7, #Path_8, #Path_9').fadeOut(500)
+    } else {
+      $('#Path_5, #Path_6, #Path_7, #Path_8, #Path_9').fadeIn(500)
+
+    }
+
+    prevScroll = currentScroll
+
+  })
+}
+
 $(document).ready(function () {
   animateBorders();
   setTimeout(appearVariants, 1000);
   setTimeout(animateProductLines, 1750);
   setTimeout(appearRest, 1750);
 
-  // setInterval(addBigContainer, 6000);
-  // setInterval(animateBigSlides, 6000);
-  // setInterval(animatePhrases, 6000);
-  // setInterval(animateSmallSlides, 6000);
-  // // setInterval(animateProductCTA, 6000);
-  // setInterval(animateBigSlidesNew, 6000);
 
+  setInterval(animatePhrases, 6000);
+  setInterval(animateSmallSlides, 6000);
+  // // setInterval(animateProductCTA, 6000);
   setInterval(animateWidthSlides, 6000);
 
   navBackgroundChange();
@@ -858,7 +879,7 @@ $(document).ready(function () {
   appearSummaryMobile();
   collectionsHover();
   openProductChosen();
-
+  hideLogo();
 
   // For Rings animation
 

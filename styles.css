@@ -115,6 +115,10 @@ header {
   justify-content: space-between;
 }
 
+.justify-center {
+  justify-content: center;
+}
+
 .align-center {
   align-content: center;
 }
@@ -235,6 +239,18 @@ header {
   height: 23px;
 }
 
+.product-nav-search input {
+  background-color: #000;
+  outline: none;
+  border: none;
+  color: #b4965a;
+  margin-left: 10px;
+}
+
+.product-nav-search input::placeholder {
+  color: #b4965a;
+}
+
 .is-cart-toggle img {
   width: 17px;
 }
@@ -247,7 +263,7 @@ header {
   z-index: 10;
 }
 
-#logo img {
+#logo svg {
   width: 11vw;
 }
 
@@ -1194,6 +1210,32 @@ iframe {
   visibility: visible;
 }
 
+.view-all {
+  transform: translateY(50%);
+  left: 0;
+  z-index: 2;
+}
+
+.product-categories-cta {
+  bottom: -81px;
+}
+
+.product-most-cta {
+  bottom: 0;
+}
+
+.view-all a {
+  padding: 20px 35px;
+  background-color: #000;
+  color: #b4965a;
+  text-decoration: none;
+  transition: all 0.35s 0s cubic-bezier(0.95, 0.2, 0.2, 0.95);
+}
+
+.view-all a:hover {
+  padding: 20px 55px;
+}
+
 /* 
 Start special classes that trigger the animation on the product phi & img */
 
@@ -1308,7 +1350,7 @@ span.span-is-bigger {
 
 .most-products-products {
   height: 300px;
-  margin-bottom: 80px;
+  /* margin-bottom: 80px; */
 }
 
 .most-products-product img {
@@ -1636,6 +1678,48 @@ section.products-grid {
   font-size: 20px;
 }
 
+.grid-product-info a {
+  font-size: 12.5px;
+  cursor: pointer;
+  position: relative;
+  color: #b4965a;
+  text-decoration: none;
+}
+
+.grid-product-info a:after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  height: 1px;
+  left: 0;
+  width: 100%;
+  background-color: #b4965a;
+  transform: scaleX(0);
+  transform-origin: 50%;
+  transition: transform 0.4s cubic-bezier(0.95, 0.25, 0.25, 0.95);
+  margin-top: 3px;
+}
+
+.grid-product-info a.variant-images {
+  transition: all 0.4s cubic-bezier(0.95, 0.25, 0.25, 0.95);
+}
+
+.grid-product-info a.variant-images:after {
+  display: none;
+}
+
+.grid-product-related:hover a.variant-images {
+  opacity: 0.4;
+}
+
+.grid-product-related a.variant-images:hover {
+  opacity: 1;
+}
+
+.grid-product-info a:hover::after {
+  transform: scalex(1);
+}
+
 .grid-product-image:hover .grid-product-info {
   opacity: 1;
   transition: all 0.2s 0.2s cubic-bezier(0.95, 0.25, 0.25, 0.95)
@@ -1651,7 +1735,7 @@ img#main-image:hover {
 }
 
 .grid-product-related img {
-  height: 60px;
+  height: 80px;
   margin: 0;
   margin-top: 20px;
 }
@@ -1690,6 +1774,14 @@ img.is-active-opacity {
   background-image: url(images/grid-xray-dna1@2x.png);
 }
 
+.dna2-xray {
+  background-image: url(images/grid-xray-dna2@2x.png);
+}
+
+.dna3-xray {
+  background-image: url(images/grid-xray-dna3@2x.png);
+}
+
 /* Start Product-Template Content */
 
 .has-white-background {
@@ -1709,7 +1801,7 @@ img.is-active-opacity {
 .product-variants {
   overflow: scroll;
   width: 19%;
-  margin-top: calc(3.5vh + 15px);
+  padding-top: calc(3.5vh + 15px);
 }
 
 .product-variants a {
@@ -1724,7 +1816,7 @@ img.is-active-opacity {
 
 .product-variant {
   align-items: center;
-  margin-bottom: 30%;
+  margin-bottom: 25%;
   justify-content: left;
 }
 
@@ -1850,6 +1942,10 @@ h2.product-variant-h2,
 .main-img-inner img {
   max-width: 400px;
   margin: auto;
+}
+
+.main-img-inner-scroll-inner div:not(:nth-child(2)) img {
+  max-width: calc(100% - 100px);
 }
 
 .product-info-container {
@@ -1986,7 +2082,7 @@ a#view-size-summary:after {
   background-color: #000000;
   transform: scaleX(0);
   transform-origin: left;
-  transition: transform 0.4s cubic-bezier(0.095, 0.25, 0.25, 0.95);
+  transition: transform 0.4s cubic-bezier(0.95, 0.25, 0.25, 0.95);
   margin-top: 3px;
   transform-origin: left;
 }
@@ -2490,7 +2586,7 @@ img.related-img {
     width: 130px;
   }
   .product-variants {
-    width: 46.7%;
+    width: 36.7%;
   }
   h2.product-variant-h2 {
     margin-top: 33px;
@@ -2689,10 +2785,16 @@ img.related-img {
     width: auto;
   }
   .main-img-inner-img {
-    min-width: 100vw;
+    min-width: 100%;
+  }
+  .related-products-container-inner>div {
+    justify-content: center;
   }
   .grid-product {
     width: 50%;
+  }
+  .main-img-info {
+    width: 63%;
   }
 }
 
@@ -2773,6 +2875,7 @@ img.related-img {
     height: 140px;
     margin-top: 0px;
     display: flex;
+    padding-top: 0;
   }
   /* sin breadcrumbs arriba de todo *hay que cambiar el margin-top de product-variants (esta arriba de esto) a 50px si no se usa */
   .product-info-inner {
