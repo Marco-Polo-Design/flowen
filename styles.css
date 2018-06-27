@@ -4,8 +4,7 @@
   box-sizing: border-box;
 }
 
-html,
-body {
+html {
   overflow-x: hidden;
 }
 
@@ -430,7 +429,8 @@ ul.main-links {
   margin-bottom: 7.5vh;
 }
 
-.sub-links-inner {}
+.sub-links-inner {
+}
 
 .sub-link {
   margin-bottom: 20px;
@@ -526,13 +526,15 @@ h1.h1-button-slider {
 img.arrow {
   height: 12px;
   opacity: 0;
-  transition: opacity 0.3s 0s, margin-right 0.3s 0s, display 0.3s 0.3s cubic-bezier(0.95, 0.2, 0.2, 0.95);
+  transition: opacity 0.3s 0s, margin-right 0.3s 0s,
+    display 0.3s 0.3s cubic-bezier(0.95, 0.2, 0.2, 0.95);
 }
 
 .product-button:hover img.arrow {
   opacity: 1;
   margin-right: 10px;
-  transition: opacity 0.3s 0.3s, margin-right 0.3s 0s, display 0.3s 0.3s cubic-bezier(0.95, 0.2, 0.2, 0.95);
+  transition: opacity 0.3s 0.3s, margin-right 0.3s 0s,
+    display 0.3s 0.3s cubic-bezier(0.95, 0.2, 0.2, 0.95);
 }
 
 .product-button:hover {
@@ -551,7 +553,8 @@ img.arrow {
 
 /* Content for Home */
 
-.intro {}
+.intro {
+}
 
 .home-slider {
   height: 100vh;
@@ -3082,7 +3085,7 @@ img.related-img {
   .main-img-inner-img {
     min-width: 100%;
   }
-  .related-products-container-inner>div {
+  .related-products-container-inner > div {
     justify-content: center;
   }
   .grid-product {
