@@ -309,11 +309,40 @@ function openNav() {
   $('.is-menu-toggle ').on('click', () => {
     const mainLinks = document.querySelectorAll('.nav-main-links-inner ul li a div p');
 
+    $('.bag-container').css('z-index', '89');
+    $('.menu-nav').css('z-index', '90');
+
+
     if (
       $('.menu-nav-bcgd').hasClass('is-nav-closed') &&
-      $('.nav-elements-container').hasClass('is-not-visible')
-    ) {
+      $('.nav-elements-container').hasClass('is-not-visible') && $(window).width() < 414) {
       //Remove Delay for the menu-nav to scaleX(1) 1st
+      $('.menu-nav-bcgd, .menu-nav-rest').css({
+        'transition-delay': '0s'
+      });
+      $('.menu-nav-bcgd, .menu-nav-rest').addClass('is-nav-open');
+      $('.nav-elements-container, ul.main-links').css({
+        'transition-delay': '0.5s'
+      });
+
+      linksUp();
+
+      // Add Delay for 1st scale X & then appear
+
+      $('.aob-links, .sub-links-container, .nav-social-media').css({
+        'transition-delay': '0.95s'
+      });
+
+      $(
+        '.nav-elements-container, ul.main-links, .aob-links, .sub-links-container, .nav-social-media'
+      ).removeClass('is-not-visible');
+
+
+
+    }
+    // for desktop do  remove the background-color 
+    else if ($('.menu-nav-bcgd').hasClass('is-nav-closed') &&
+      $('.nav-elements-container').hasClass('is-not-visible')) {
       $('.menu-nav-bcgd, .menu-nav-rest').css({
         'transition-delay': '0s'
       });
@@ -336,7 +365,26 @@ function openNav() {
 
       // Remove background from header (for product template's)
       $('header').css('background-color', 'initial');
-    } else if ($('.menu-nav-bcgd').hasClass('is-nav-closed')) {
+
+    }
+    // Mobile for closed animations
+    else if ($('.menu-nav-bcgd').hasClass('is-nav-closed') && $(window).width() < 414) {
+      $('.menu-nav-bcgd, .menu-nav-rest').css({
+        'transition-delay': '0.5s'
+      });
+      $('.menu-nav-bcgd, .menu-nav-rest').removeClass('is-nav-open');
+      $('.nav-elements-container').css({
+        'transition-delay': '0s'
+      });
+      $('.nav-elements-container').addClass('is-not-visible');
+
+      $(mainLinks).css('transform', '');
+
+
+    }
+
+    // Desktop animation & setting the header to initial 
+    else if ($('.menu-nav-bcgd').hasClass('is-nav-closed')) {
       $('.menu-nav-bcgd, .menu-nav-rest').css({
         'transition-delay': '0.5s'
       });
@@ -422,6 +470,7 @@ function navBackgroundChange() {
 }
 
 function headerBlack() {
+
   $(document).on('scroll', () => {
     const pixelsForHeader = $(document).scrollTop();
 
@@ -465,21 +514,7 @@ function changeToBlack() {
   });
 }
 
-function appearSummaryMobile() {
-  $(document).on('scroll', () => {
-    const pixelsFromTop = $(document).scrollTop();
-    const pixelsFromSummary = $('.details-inner').offset().top;
 
-    console.log(pixelsFromTop);
-    console.log(pixelsFromSummary);
-
-    if ($(window).width() < 768 && pixelsFromTop > pixelsFromSummary) {
-      $('.details-summary-container').css('transform', 'translateY(-100%)');
-    } else if ($(window).width() < 768 && pixelsFromTop < pixelsFromSummary) {
-      $('.details-summary-container').css('transform', 'translateY(100%)');
-    }
-  });
-}
 
 function collectionsHover() {
   $('div.product-img.is-rings.is-absolute')
@@ -845,10 +880,9 @@ function hideLogo() {
   $(document).on('scroll', () => {
 
     const currentScroll = $(document).scrollTop()
-    const initialScroll = $(document).scrollTop()
 
 
-    if (currentScroll > prevScroll && $('.home-bio').hasClass('is-relative')) {
+    if (currentScroll > prevScroll && $('.home-bio').hasClass('is-relative') && $(window).width() >= 768) {
       $('#Path_5, #Path_6, #Path_7, #Path_8, #Path_9').fadeOut(500)
     } else {
       $('#Path_5, #Path_6, #Path_7, #Path_8, #Path_9').fadeIn(500)
@@ -858,7 +892,85 @@ function hideLogo() {
     prevScroll = currentScroll
 
   })
+};
+
+function appearSummaryMobile() {
+  if ($(window).width() < 768 && $('.product-info-container').hasClass('flex')) {
+
+    $(document).on('scroll', () => {
+      const pixelsFromTop = $(document).scrollTop();
+      const pixelsFromSummary = $('.details-inner').offset().top
+
+      console.log(pixelsFromTop);
+      console.log(pixelsFromSummary);
+
+      if (pixelsFromTop > pixelsFromSummary) {
+        $('.details-summary-container').css('transform', 'translateY(-100%)');
+      } else if ($(window).width() < 768 && pixelsFromTop < pixelsFromSummary) {
+        $('.details-summary-container').css('transform', 'translateY(100%)');
+      }
+    });
+  }
 }
+
+
+function openCart() {
+
+  const detailsAOB = document.querySelectorAll('#cart-product-option-1, #cart-product-option-2, #cart-product-size, #cart-product-qty, #cart-product-price')
+
+
+  const bagCTA = document.querySelectorAll('.bag-cta-total, .checkout')
+
+  $(detailsAOB).css('transition-delay', '0.5s')
+
+
+  $('.is-cart-toggle').on('click', function () {
+    $('.bag-container').toggleClass('bag-container-open')
+    $('.bag-inner').toggleClass('bag-inner-open');
+    $('.bag-rest').toggleClass('bag-rest-open');
+    $('.bag-product-image').toggleClass('bag-product-image-open');
+    $('.bag-product-info-name').toggleClass('bag-product-info-name-open');
+    $('.bag-product-info-details').toggleClass('bag-product-info-details-open');
+    $(detailsAOB).toggleClass('bag-product-info-details-children-open')
+    $(bagCTA).toggleClass('bag-cta-open')
+    $('.menu-nav').css('z-index', '89');
+    $('.bag-container').css('z-index', '90');
+
+
+    if ($('.bag-container').hasClass('bag-container-open')) {
+      detailsAOB.forEach(function (detailsAOB, index) {
+        const delay = index * 50;
+        detailsAOB.style.transitionDelay = delay + 1100 + 'ms';
+      });
+
+      bagCTA.forEach(function (bagCTA, index) {
+        const delay = index * 150;
+        bagCTA.style.transitionDelay = delay + 1600 + 'ms';
+      });
+
+    } else {
+      $(detailsAOB).css('transition-delay', '')
+      $(bagCTA).css('transition-delay', '')
+    }
+
+    if ($('.bag-inner').hasClass('bag-inner-open') && $(window).width() <= 414) {
+      $('.cart-info').css('opacity', '1');
+    } else if ($('.bag-inner').hasClass('bag-inner-open')) {
+      $('.cart-info').css('opacity', '1');
+    } else {
+      $('.cart-info').css('opacity', '');
+
+    }
+
+  })
+
+
+
+}
+
+
+
+
 
 $(document).ready(function () {
   animateBorders();
@@ -867,10 +979,11 @@ $(document).ready(function () {
   setTimeout(appearRest, 1750);
 
 
-  setInterval(animatePhrases, 6000);
-  setInterval(animateSmallSlides, 6000);
-  // // setInterval(animateProductCTA, 6000);
-  setInterval(animateWidthSlides, 6000);
+  // setInterval(animatePhrases, 6000);
+  // setInterval(animateSmallSlides, 6000);
+  // setInterval(animateWidthSlides, 6000);
+  // setInterval(animateProductCTA, 6000);
+
 
   navBackgroundChange();
   openNav();
@@ -880,6 +993,7 @@ $(document).ready(function () {
   collectionsHover();
   openProductChosen();
   hideLogo();
+  openCart();
 
   // For Rings animation
 

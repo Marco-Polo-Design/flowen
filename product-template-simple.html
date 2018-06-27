@@ -23,10 +23,6 @@
     <header>
 
       <div class="general-container is-desktop-menu flex justify-ends align-center width-100">
-        <div class="is-menu-toggle">
-          <img src="images/menu-open.svg" </div>
-        </div>
-
         <div id="logo">
           <a href='index.html'>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="-6515.549 81 170.098 104.194">
@@ -54,8 +50,14 @@
             </svg>
           </a>
         </div>
+        <div class="is-menu-toggle">
+          <img src="images/menu-open.svg" </div>
+        </div>
 
-        <div class="is-cart-toggle">
+        <div class="is-cart-toggle inline-flex">
+          <div class="cart-info">
+            <h1 class="is-maison">BAG</h1>
+          </div>
           <img src="images/cart-icon.svg" </div>
         </div>
 
@@ -94,7 +96,7 @@
                     <li>
                       <a class="earings-link" href="#">
                         <div class="main-link">
-                          <p>Earings</p>
+                          <p>Earrings</p>
                         </div>
                       </a>
                     </li>
@@ -162,7 +164,42 @@
         </div>
 
       </div>
+      <div class="bag-container flex">
+        <div class="bag-rest"></div>
+        <div class="bag-inner flex">
+          <div class="bag-product margin-auto flex">
+            <div class="bag-product-image">
+              <img src="images/radix-rg-bd@2x.png">
+            </div>
 
+            <div class="bag-product-info flex no-wrap">
+              <div class="bag-product-info-name">
+                <h1 class="is-maison" id="cart-product-name">Radix</h1>
+              </div>
+              <div class="bag-product-info-details">
+                <p id="cart-product-option-1">Rose Gold</p>
+                <p id="cart-product-option-2">Black Diamonds</p>
+                <p id="cart-product-size">Size M</p>
+                <p id="cart-product-qty">Qty. 1</p>
+                <h1 class="is-maison" id="cart-product-price">$1500</h1>
+              </div>
+            </div>
+          </div>
+
+          <div class="bag-cta-container general-container">
+            <div class="bag-cta-inner flex">
+              <div class="bag-cta-total">
+                <h1 class="is-maison">Total: $1500</h1>
+              </div>
+              <div class="checkout is-relative">
+                <h1 class="is-maison">Checkout</h1>
+                <div class="checkout-gold-bcgd"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
 
 
 
@@ -213,6 +250,25 @@
                 <h3>RB002</h3>
               </div>
             </a>
+
+            <a href="#" class="product-variant flex-inline flex-wrap radix">
+              <div class="width-50">
+                <img src="images/radix-br-bd@2x.png">
+              </div>
+              <div class="width-30">
+                <h3>RB0I3</h3>
+              </div>
+            </a>
+
+            <a href="#" class="product-variant flex-inline flex-wrap radix">
+              <div class="width-50">
+                <img src="images/radix-br-blued@2x@2x.png">
+              </div>
+              <div class="width-30">
+                <h3>RB0I4</h3>
+              </div>
+            </a>
+
             <a href="#" class="product-variant flex-inline flex-wrap radix">
               <div class="width-50">
                 <img src="images/radix-roseg@2x.png">
@@ -221,6 +277,16 @@
                 <h3>RR001</h3>
               </div>
             </a>
+
+            <a href="#" class="product-variant flex-inline flex-wrap radix">
+              <div class="width-50">
+                <img src="images/radix-rg-bd@2x.png">
+              </div>
+              <div class="width-30">
+                <h3>RR0B2</h3>
+              </div>
+            </a>
+
             <a href="#" class="product-variant flex-inline flex-wrap radix">
               <div class="width-50">
                 <img src="images/radix-bg@2x.png">
@@ -231,12 +297,15 @@
             </a>
             <a href="#" class="product-variant flex-inline flex-wrap radix">
               <div class="width-50">
-                <img src="images/radix-bg-iced.png">
+                <img src="images/radix-bg-iced@2x.png">
               </div>
               <div class="width-30">
                 <h3>RBGI1</h3>
               </div>
             </a>
+
+
+
 
           </div>
         </div>
@@ -282,7 +351,9 @@
         <div class="product-info-container flex flex-column ">
           <div class="product-info-inner ">
             <div class="back-to-products product-info-inner-padding">
-              <h2>Products > Rings > Radix</h2>
+              <a href="products-grid.html">
+                <h2>Products > Rings > Radix</h2>
+              </a>
             </div>
           </div>
 
@@ -532,14 +603,17 @@
 
     </section>
 
+    <div class="view-all product-template-cta flex text-align-center is-relative justify-center">
+      <a href="products-grid.html" class="is-maison">View All</a>
+    </div>
 
-    <section class="is-footer flex width-100 text-align-center">
+    <!-- <section class="is-footer flex width-100 text-align-center">
       <div class="margin-auto is-footer-inner">
         <h2 class="is-maison">FLOWEN</h2>
         <h2 class="is-maison">ALL RIGHTS RESERVED</h2>
       </div>
 
-    </section>
+    </section> -->
 
 
   </div>
