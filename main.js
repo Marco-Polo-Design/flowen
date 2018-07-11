@@ -1,3 +1,30 @@
+$(document).ready(function () {
+  function removePreloader() {
+    $('.preloader-small').css('transform', 'scaleX(0)');
+    $('.preloader-big').css('transform', 'scaleX(0)');
+
+    $('.is-menu-toggle').fadeIn(300);
+    $('.is-cart-toggle').css('display', 'flex');
+  }
+
+  setTimeout(removePreloader, 4000);
+});
+
+function pageTransition() {
+  const aLinks = document.querySelectorAll('a');
+
+  $(aLinks).on('click', function () {
+    var href = $(this).attr('href');
+    $('.preloader-small').css('transform', 'scaleX(1)');
+    $('.preloader-big').css('transform', 'scaleX(1)');
+
+    setTimeout(function () {
+      window.location = href;
+    }, 1000);
+    return false;
+  });
+}
+
 function animateBorders() {
   $('.is-first-border').toggleClass('animate-first-border');
   $('.is-second-border').toggleClass('animate-second-border');
@@ -70,149 +97,188 @@ function animateProductCTA() {
   });
 }
 
+// function animateBigSlides() {
+//   const slides = document.querySelectorAll('#big-slide-img-container div');
+
+//   var previousSlide = slides[currentSlide - 1];
+//   var previousPreviousSlide = slides[currentSlide - 2];
+//   var slide = slides[currentSlide];
+
+//   var nextSlide = slides[currentSlide + 1];
+//   var maxSlides = slides.length;
+//   var lastSlide = $(slides).last();
+
+//   currentSlide = currentSlide + 1;
+
+//   slides.forEach(function (slides, index) {
+//     $(slide).addClass('is-current-slide');
+//     $(slide).removeClass('is-not-current');
+//     $(lastSlide).removeClass('is-current-slide');
+//     $(lastSlide).removeClass('will-be-current');
+
+//     $(previousSlide).removeClass('is-not-current');
+//     $(previousSlide).removeClass('will-be-current');
+//     $(slide).addClass('slider-image-scale-appear');
+//     $(nextSlide).addClass('slider-image-scale-reverse');
+//     $(nextSlide).addClass('will-be-current');
+
+//     // las clases se van sacando con previousSlide y slide, se deja el lastslide para el loop cuando vuelve a empezar. hay que sacarle el currentslide porque al loopear no entra en la categoría de previousSlide, entonces se hace una clase especial para este último elemento.
+//   });
+
+//   $(slide).removeClass('slider-image-scale-reverse');
+//   $(slide).removeClass('slider-image-appear');
+//   $(slide).removeClass('is-not-current-slide');
+//   // $(previousSlide).addClass('is-not-current-slide');
+//   $(previousSlide).removeClass('is-current-slide');
+
+//   $(previousPreviousSlide).removeClass('slider-image-scale-appear');
+
+//   if (currentSlide >= 4) {
+//     $(slides).css('transform', 'translateY(0)');
+//     currentSlide = 0;
+
+//     // Add clases for first time
+//     // Aca repite lo del principio MENOS lo del lastSlide, porque este actúa como el loop del último slide.
+//     $(slide).addClass('is-current-slide');
+//     $(slide).removeClass('is-not-current');
+
+//     $(previousSlide).removeClass('is-not-current');
+//     $(previousSlide).removeClass('will-be-current');
+//     $(slide).addClass('slider-image-scale-appear');
+//     $(nextSlide).addClass('slider-image-scale-reverse');
+//     $(nextSlide).addClass('will-be-current');
+//   }
+// }
+
+// function animateBigSlidesNew() {
+//   const bigSlides = document.querySelectorAll('.big-slide-img-container-inner');
+
+//   var previousBigSlide = bigSlides[currentSlide - 1];
+//   var bigSlide = bigSlides[currentSlide];
+//   var nextBigSlide = bigSlides[currentSlide + 1];
+//   var firstBigSlide = $(bigSlides).first();
+//   var lastBigSlide = $(bigSlides).last();
+
+//   const images = document.querySelectorAll('.big-slide-img');
+//   var nextImage = images[currentSlide + 1];
+
+//   currentSlide = currentSlide + 1;
+
+//   bigSlides.forEach(function (bigSlides, index) {
+//     $(bigSlide).css('left', '100%');
+//     $(nextImage).addClass('slider-image-scale-reverse');
+//     $(bigSlides).css('transition', '');
+//   });
+// }
+
 var currentSlide = 0;
-
-function animateBigSlides() {
-  const slides = document.querySelectorAll('#big-slide-img-container div');
-
-  var previousSlide = slides[currentSlide - 1];
-  var previousPreviousSlide = slides[currentSlide - 2];
-  var slide = slides[currentSlide];
-
-  var nextSlide = slides[currentSlide + 1];
-  var maxSlides = slides.length;
-  var lastSlide = $(slides).last();
-
-  currentSlide = currentSlide + 1;
-
-  slides.forEach(function (slides, index) {
-    $(slide).addClass('is-current-slide');
-    $(slide).removeClass('is-not-current');
-    $(lastSlide).removeClass('is-current-slide');
-    $(lastSlide).removeClass('will-be-current');
-
-    $(previousSlide).removeClass('is-not-current');
-    $(previousSlide).removeClass('will-be-current');
-    $(slide).addClass('slider-image-scale-appear');
-    $(nextSlide).addClass('slider-image-scale-reverse');
-    $(nextSlide).addClass('will-be-current');
-
-    // las clases se van sacando con previousSlide y slide, se deja el lastslide para el loop cuando vuelve a empezar. hay que sacarle el currentslide porque al loopear no entra en la categoría de previousSlide, entonces se hace una clase especial para este último elemento.
-  });
-
-  $(slide).removeClass('slider-image-scale-reverse');
-  $(slide).removeClass('slider-image-appear');
-  $(slide).removeClass('is-not-current-slide');
-  // $(previousSlide).addClass('is-not-current-slide');
-  $(previousSlide).removeClass('is-current-slide');
-
-  $(previousPreviousSlide).removeClass('slider-image-scale-appear');
-
-  if (currentSlide >= 4) {
-    $(slides).css('transform', 'translateY(0)');
-    currentSlide = 0;
-
-    // Add clases for first time
-    // Aca repite lo del principio MENOS lo del lastSlide, porque este actúa como el loop del último slide.
-    $(slide).addClass('is-current-slide');
-    $(slide).removeClass('is-not-current');
-
-    $(previousSlide).removeClass('is-not-current');
-    $(previousSlide).removeClass('will-be-current');
-    $(slide).addClass('slider-image-scale-appear');
-    $(nextSlide).addClass('slider-image-scale-reverse');
-    $(nextSlide).addClass('will-be-current');
-  }
-}
-
-function animateBigSlidesNew() {
-  const bigSlides = document.querySelectorAll('.big-slide-img-container-inner');
-
-  var previousBigSlide = bigSlides[currentSlide - 1];
-  var bigSlide = bigSlides[currentSlide];
-  var nextBigSlide = bigSlides[currentSlide + 1];
-  var firstBigSlide = $(bigSlides).first();
-  var lastBigSlide = $(bigSlides).last();
-
-  const images = document.querySelectorAll('.big-slide-img');
-  var nextImage = images[currentSlide + 1];
-
-  currentSlide = currentSlide + 1;
-
-  bigSlides.forEach(function (bigSlides, index) {
-    $(bigSlide).css('left', '100%');
-    $(nextImage).addClass('slider-image-scale-reverse');
-    $(bigSlides).css('transition', '');
-  });
-}
 
 function animateWidthSlides() {
   const bigSlides = Array.prototype.slice.call(document.querySelectorAll('.big-slide-img'));
 
   bigSlides.reverse();
 
-
   var bigSlide = bigSlides[currentSlide];
-  var previousBigSlide = bigSlides[currentSlide - 1];
   var nextBigSlide = bigSlides[currentSlide + 1];
 
+  var bigImages = Array.prototype.slice.call(document.querySelectorAll('.big-slide-content'));
 
-  const images = Array.prototype.slice.call(document.querySelectorAll('.big-slide-content'));
-
-  images.reverse();
-  var nextImage = images[currentSlide + 1]
+  bigImages.reverse();
+  var nextBigImage = bigImages[currentSlide + 1];
 
   bigSlides.forEach(function (bigSlides, index) {
     if ($(window).width() >= 414) {
-
       $(nextBigSlide).css('width', '100%');
-      $(nextImage).addClass('slider-image-scale-reverse')
-
+      // $(nextBigImage).addClass('slider-image-scale-reverse');
     } else {
       bigSlides.style.transitionDelay = '';
       $(nextBigSlide).css('height', '100%');
-      $(nextImage).addClass('slider-image-scale-reverse')
+      // $(nextBigImage).addClass('slider-image-scale-reverse');
     }
-
-
-  })
-
+  });
 
   currentSlide = currentSlide + 1;
 
-
   if ($(window).width() >= 414 && currentSlide >= 4) {
-
     bigSlides.reverse();
 
-    bigSlides.forEach(function (bigSlides, index) {
-      const delay = index * 120;
-      bigSlides.style.transitionDelay = delay + 200 + 'ms';
-    })
+    // bigSlides.forEach(function (bigSlides, index) {
+    //   const delay = index * 120;
+    //   bigSlides.style.transitionDelay = delay + 200 + 'ms';
+    // })
 
     $(bigSlides).css('width', '');
-    $(images).removeClass('slider-image-scale-reverse')
+    // $(bigImages).removeClass('slider-image-scale-reverse');
 
     currentSlide = 0;
-
   } else if ($(window).width() <= 414 && currentSlide >= 4) {
-
     bigSlides.reverse();
 
-    bigSlides.forEach(function (bigSlides, index) {
-      const delay = index * 120;
-      bigSlides.style.transitionDelay = delay + 200 + 'ms';
-    })
+    // bigSlides.forEach(function (bigSlides, index) {
+    //   const delay = index * 120;
+    //   bigSlides.style.transitionDelay = delay + 200 + 'ms';
+    // })
 
     $(bigSlides).css('height', '');
-    $(images).removeClass('slider-image-scale-reverse')
+    // $(bigImages).removeClass('slider-image-scale-reverse');
 
     currentSlide = 0;
-
   }
+}
 
+function animateSmallSlidesLast() {
+  cuurentSmallSlide = 0;
 
+  const smallSlides = Array.prototype.slice.call(document.querySelectorAll('.small-slide-img'));
 
+  smallSlides.reverse();
+
+  var smallSlide = smallSlides[currentSmallSlide];
+
+  //Se pone una class en las img para poder seleccionarlas
+  const images = Array.prototype.slice.call(document.querySelectorAll('.small-slide-content'));
+
+  images.reverse();
+  var nextImage = images[currentSmallSlide + 1];
+
+  smallSlides.forEach(function (smallSlides, index) {
+    if ($(window).width() >= 414) {
+      $(smallSlide).css('width', '0%');
+      // $(nextImage).addClass('slider-image-scale-reverse')
+    } else {
+      smallSlides.style.transitionDelay = '';
+      $(smallSlide).css('height', '0%');
+      // $(nextImage).addClass('slider-image-scale-reverse')
+    }
+  });
+
+  currentSmallSlide = currentSmallSlide + 1;
+
+  if ($(window).width() >= 414 && currentSmallSlide >= 4) {
+    smallSlides.reverse();
+
+    // smallSlides.forEach(function (smallSlides, index) {
+    //   const delay = index * 120;
+    //   smallSlides.style.transitionDelay = delay + 200 + 'ms';
+    // })
+
+    $(smallSlides).css('width', '');
+    $(images).removeClass('slider-image-scale-reverse');
+
+    currentSmallSlide = 0;
+  } else if ($(window).width() <= 414 && currentSmallSlide >= 4) {
+    smallSlides.reverse();
+
+    // smallSlides.forEach(function (smallSlides, index) {
+    //   const delay = index * 120;
+    //   smallSlides.style.transitionDelay = delay + 200 + 'ms';
+    // })
+
+    $(smallSlides).css('height', '');
+    $(images).removeClass('slider-image-scale-reverse');
+
+    currentSmallSlide = 0;
+  }
 }
 
 currentSmallSlide = 0;
@@ -312,10 +378,11 @@ function openNav() {
     $('.bag-container').css('z-index', '89');
     $('.menu-nav').css('z-index', '90');
 
-
     if (
       $('.menu-nav-bcgd').hasClass('is-nav-closed') &&
-      $('.nav-elements-container').hasClass('is-not-visible') && $(window).width() < 414) {
+      $('.nav-elements-container').hasClass('is-not-visible') &&
+      $(window).width() < 414
+    ) {
       //Remove Delay for the menu-nav to scaleX(1) 1st
       $('.menu-nav-bcgd, .menu-nav-rest').css({
         'transition-delay': '0s'
@@ -336,13 +403,12 @@ function openNav() {
       $(
         '.nav-elements-container, ul.main-links, .aob-links, .sub-links-container, .nav-social-media'
       ).removeClass('is-not-visible');
-
-
-
     }
-    // for desktop do  remove the background-color 
-    else if ($('.menu-nav-bcgd').hasClass('is-nav-closed') &&
-      $('.nav-elements-container').hasClass('is-not-visible')) {
+    // for desktop do  remove the background-color
+    else if (
+      $('.menu-nav-bcgd').hasClass('is-nav-closed') &&
+      $('.nav-elements-container').hasClass('is-not-visible')
+    ) {
       $('.menu-nav-bcgd, .menu-nav-rest').css({
         'transition-delay': '0s'
       });
@@ -365,7 +431,6 @@ function openNav() {
 
       // Remove background from header (for product template's)
       $('header').css('background-color', 'initial');
-
     }
     // Mobile for closed animations
     else if ($('.menu-nav-bcgd').hasClass('is-nav-closed') && $(window).width() < 414) {
@@ -379,11 +444,9 @@ function openNav() {
       $('.nav-elements-container').addClass('is-not-visible');
 
       $(mainLinks).css('transform', '');
-
-
     }
 
-    // Desktop animation & setting the header to initial 
+    // Desktop animation & setting the header to initial
     else if ($('.menu-nav-bcgd').hasClass('is-nav-closed')) {
       $('.menu-nav-bcgd, .menu-nav-rest').css({
         'transition-delay': '0.5s'
@@ -470,11 +533,11 @@ function navBackgroundChange() {
 }
 
 function headerBlack() {
-
   $(document).on('scroll', () => {
     const pixelsForHeader = $(document).scrollTop();
-
-    if ($(window).width() < 414 && pixelsForHeader > 1) {
+    if ($('header').hasClass('no-background-really')) {
+      $('header').css('background-color', '');
+    } else if (pixelsForHeader > 1) {
       $('header').css('background-color', '#000');
     } else if (pixelsForHeader == 0) {
       $('header').css('background-color', '');
@@ -513,8 +576,6 @@ function changeToBlack() {
     }
   });
 }
-
-
 
 function collectionsHover() {
   $('div.product-img.is-rings.is-absolute')
@@ -871,35 +932,31 @@ function openProductChosen() {
   });
 }
 
+// function hideLogo() {
 
+//   let prevScroll = 0
 
-function hideLogo() {
+//   $(document).on('scroll', () => {
 
-  let prevScroll = 0
+//     const currentScroll = $(document).scrollTop()
 
-  $(document).on('scroll', () => {
+//     if (currentScroll > prevScroll && $('.home-bio').hasClass('is-relative') && $(window).width() >= 768) {
+//       $('#Path_5, #Path_6, #Path_7, #Path_8, #Path_9').fadeOut(500)
+//     } else {
+//       $('#Path_5, #Path_6, #Path_7, #Path_8, #Path_9').fadeIn(500)
 
-    const currentScroll = $(document).scrollTop()
+//     }
 
+//     prevScroll = currentScroll
 
-    if (currentScroll > prevScroll && $('.home-bio').hasClass('is-relative') && $(window).width() >= 768) {
-      $('#Path_5, #Path_6, #Path_7, #Path_8, #Path_9').fadeOut(500)
-    } else {
-      $('#Path_5, #Path_6, #Path_7, #Path_8, #Path_9').fadeIn(500)
-
-    }
-
-    prevScroll = currentScroll
-
-  })
-};
+//   })
+// };
 
 function appearSummaryMobile() {
   if ($(window).width() < 768 && $('.product-info-container').hasClass('flex')) {
-
     $(document).on('scroll', () => {
       const pixelsFromTop = $(document).scrollTop();
-      const pixelsFromSummary = $('.details-inner').offset().top
+      const pixelsFromSummary = $('.details-inner').offset().top;
 
       console.log(pixelsFromTop);
       console.log(pixelsFromSummary);
@@ -913,44 +970,40 @@ function appearSummaryMobile() {
   }
 }
 
-
 function openCart() {
+  const detailsAOB = document.querySelectorAll(
+    '#cart-product-option-1, #cart-product-option-2, #cart-product-size, #cart-product-qty, #cart-product-price'
+  );
 
-  const detailsAOB = document.querySelectorAll('#cart-product-option-1, #cart-product-option-2, #cart-product-size, #cart-product-qty, #cart-product-price')
+  const bagCTA = document.querySelectorAll('.bag-cta-total, .checkout');
 
-
-  const bagCTA = document.querySelectorAll('.bag-cta-total, .checkout')
-
-  $(detailsAOB).css('transition-delay', '0.5s')
-
+  $(detailsAOB).css('transition-delay', '0.5s');
 
   $('.is-cart-toggle').on('click', function () {
-    $('.bag-container').toggleClass('bag-container-open')
+    $('.bag-container').toggleClass('bag-container-open');
     $('.bag-inner').toggleClass('bag-inner-open');
     $('.bag-rest').toggleClass('bag-rest-open');
     $('.bag-product-image').toggleClass('bag-product-image-open');
     $('.bag-product-info-name').toggleClass('bag-product-info-name-open');
     $('.bag-product-info-details').toggleClass('bag-product-info-details-open');
-    $(detailsAOB).toggleClass('bag-product-info-details-children-open')
-    $(bagCTA).toggleClass('bag-cta-open')
+    $(detailsAOB).toggleClass('bag-product-info-details-children-open');
+    $(bagCTA).toggleClass('bag-cta-open');
     $('.menu-nav').css('z-index', '89');
     $('.bag-container').css('z-index', '90');
-
 
     if ($('.bag-container').hasClass('bag-container-open')) {
       detailsAOB.forEach(function (detailsAOB, index) {
         const delay = index * 50;
         detailsAOB.style.transitionDelay = delay + 1100 + 'ms';
       });
-
-      bagCTA.forEach(function (bagCTA, index) {
-        const delay = index * 150;
-        bagCTA.style.transitionDelay = delay + 1600 + 'ms';
-      });
-
+      $(bagCTA).css('transition-delay', '1.6s');
+      // bagCTA.forEach(function (bagCTA, index) {
+      //   const delay = index * 150;
+      //   bagCTA.style.transitionDelay = delay + 1600 + 'ms';
+      // });
     } else {
-      $(detailsAOB).css('transition-delay', '')
-      $(bagCTA).css('transition-delay', '')
+      $(detailsAOB).css('transition-delay', '');
+      $(bagCTA).css('transition-delay', '');
     }
 
     if ($('.bag-inner').hasClass('bag-inner-open') && $(window).width() <= 414) {
@@ -959,17 +1012,35 @@ function openCart() {
       $('.cart-info').css('opacity', '1');
     } else {
       $('.cart-info').css('opacity', '');
-
     }
-
-  })
-
-
-
+  });
 }
 
+function changeVideos() {
+  $(document).ready(function () {
+    if ($(window).width() < 768) {
+      $('.video-container')
+        .first()
+        .html('<img class="mobile-gif"src="images/specimens-video-gif.gif">');
+      $('.video-container')
+        .last()
+        .html('<img class="mobile-gif"src="images/nature-as-imagined-gif.gif">');
+    }
+  });
+}
+
+function inView() {
+  inView('.section')
+    .on('enter', section => {
+      section.classList.add('in-viewport')
+    })
+    .on('exit', section => {
+      // section.classList.remove('in-viewport')
+    })
 
 
+  inView.threshold(0.2)
+}
 
 
 $(document).ready(function () {
@@ -978,12 +1049,11 @@ $(document).ready(function () {
   setTimeout(animateProductLines, 1750);
   setTimeout(appearRest, 1750);
 
-
-  // setInterval(animatePhrases, 6000);
+  setInterval(animatePhrases, 6000);
   // setInterval(animateSmallSlides, 6000);
-  // setInterval(animateWidthSlides, 6000);
+  setInterval(animateWidthSlides, 6000);
   // setInterval(animateProductCTA, 6000);
-
+  setInterval(animateSmallSlidesLast, 6000);
 
   navBackgroundChange();
   openNav();
@@ -992,8 +1062,10 @@ $(document).ready(function () {
   appearSummaryMobile();
   collectionsHover();
   openProductChosen();
-  hideLogo();
+  // hideLogo();
   openCart();
+  changeVideos();
+  inView();
 
   // For Rings animation
 
@@ -1009,7 +1081,7 @@ $(document).ready(function () {
 });
 
 $(document).on('scroll', () => {
-  if ($('.home-bio').hasClass('is-relative')) {
+  if ($('.home-bio').hasClass('is-relative') && $(window).width() > 414) {
     var pixels = $(document).scrollTop();
 
     var pixelsForBio = $(document).scrollTop() - $('.js-scroll-slow-2').offset().top;

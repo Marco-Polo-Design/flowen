@@ -1,15 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="-4306.999 453.572 18.633 10.857">
-  <defs>
-    <style>
-      .cls-1 {
-        fill: none;
-        stroke: #b4965a;
-        stroke-width: 1.5px;
-      }
-    </style>
-  </defs>
-  <g id="Group_166" data-name="Group 166" transform="translate(-4763 -3686.169)">
-    <path id="Path_165" data-name="Path 165" class="cls-1" d="M-4799.946,4107.955h17.662" transform="translate(5255.947 37.186)"/>
-    <path id="Path_166" data-name="Path 166" class="cls-1" d="M6.927,0V6.927H0" transform="translate(463.777 4145.169) rotate(-45)"/>
-  </g>
-</svg>
+<svg viewBox="-4306.999 453.572 18.633 10.857" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="#b4965a" stroke-width="1.5"><path d="m-4799.946 4107.955h17.662" transform="translate(492.947 -3648.983)"/><path d="m6.927 0v6.927h-6.927" transform="matrix(.70710678 -.70710678 .70710678 .70710678 -4299.223 459)"/></g></svg>
