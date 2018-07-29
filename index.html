@@ -18,17 +18,52 @@
 
   <div id="main">
 
+    <div class="preloader-container is-fixed height-100vh width-100vw z9999">
+      <div class="preloader-inner is-relative flex no-wrap height-100 width-100">
+        <div class="width-38 height-100  bc-black preloader-small"></div>
+        <div class="width-62 height-100 bc-black preloader-big"></div>
+
+      </div>
+    </div>
+
     <header class="no-background">
 
       <div class="general-container is-desktop-menu flex justify-ends align-center width-100">
         <div id="logo">
-          <img src="images/flowen-logo.svg">
+          <a href='index.html'>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="-6515.549 81 170.098 104.194">
+              <defs>
+                <style>
+                  .cls-1 {
+                    fill: #b39559;
+                  }
+                </style>
+              </defs>
+              <g id="" transform="translate(-6515.433 80.229)">
+                <path id="Path_5" data-name="Path 5" class="cls-1" d="M-.117,31.479V54.127H1.454V44.148H12.3V42.7H1.454V32.917H13.9V31.479Z"
+                  transform="translate(0 11.079)" />
+                <path id="Path_6" data-name="Path 6" class="cls-1" d="M21.729,31.479H20.154V54.127h15.9V52.682H21.729Z" transform="translate(7.313 11.079)"
+                />
+                <path id="Path_7" data-name="Path 7" class="cls-1" d="M83.427,50.889l-6.7-19.638-.061-.179h-.506L69.407,50.889,63.6,31.625H62l7.054,23.207h.52l6.837-19.909,6.738,19.723.061.186h.522l7.052-23.207h-1.56Z"
+                  transform="translate(22.413 10.933)" />
+                <path id="Path_8" data-name="Path 8" class="cls-1" d="M93.426,43.5h10.51V42.051H93.426V32.925h11.708V31.479H91.848v22.65H105.6V52.682H93.426Z"
+                  transform="translate(33.18 11.079)" />
+                <path id="Path_9" data-name="Path 9" class="cls-1" d="M112.323,31.072v23.2H113.8V34.806l15,19.916.084.106h.526v-23.2H127.94V51.094L112.86,31.072Z"
+                  transform="translate(40.568 10.933)" />
+                <path id="Path_10" data-name="Path 10" class="cls-1" d="M51.118,63.929v-20.1a10.076,10.076,0,0,1,0,20.1ZM40.332,53.882A10.092,10.092,0,0,1,49.71,43.827v20.1a10.087,10.087,0,0,1-9.379-10.047ZM51.118,42.418V.771H49.71V42.418a11.483,11.483,0,0,0,0,22.923v39.624h1.408V65.34a11.483,11.483,0,0,0,0-22.923Z"
+                  transform="translate(14.086 0)" />
+              </g>
+            </svg>
+          </a>
         </div>
         <div class="is-menu-toggle">
           <img src="images/menu-open.svg" </div>
         </div>
 
-        <div class="is-cart-toggle">
+        <div class="is-cart-toggle inline-flex">
+          <div class="cart-info">
+            <h1 class="is-maison">BAG</h1>
+          </div>
           <img src="images/cart-icon.svg" </div>
         </div>
 
@@ -58,35 +93,35 @@
                       </a>
                     </li>
                     <li>
-                      <a class="new-arrivals-link" href="#">
+                      <a class="new-arrivals-link" href="products-grid.html">
                         <div class="main-link">
                           <p>New Arrivals</p>
                         </div>
                       </a>
                     </li>
                     <li>
-                      <a class="earings-link" href="#">
+                      <a class="earings-link" href="products-grid.html">
                         <div class="main-link">
-                          <p>Earings</p>
+                          <p>Earrings</p>
                         </div>
                       </a>
                     </li>
                     <li>
-                      <a class="pendants-link" href="#">
+                      <a class="pendants-link" href="products-grid.html">
                         <div class="main-link">
                           <p>Pendants</p>
                         </div>
                       </a>
                     </li>
                     <li>
-                      <a class="bags-link" href="#">
+                      <a class="bags-link" href="products-grid.html">
                         <div class="main-link">
                           <p>Bags</p>
                         </div>
                       </a>
                     </li>
                     <li>
-                      <a class="limited-release-link" href="#">
+                      <a class="limited-release-link" href="products-grid.html">
                         <div class="main-link">
                           <p>Limited Release</p>
                         </div>
@@ -96,7 +131,7 @@
                   <div class="sub-links-container is-not-visible">
                     <div class="sub-links-inner flex flex-wrap">
                       <div class="sub-link">
-                        <a>BIO</a>
+                        <a href="bio.html">BIO</a>
                       </div>
                       <div class="sub-link">
                         <a>PHI</a>
@@ -135,16 +170,54 @@
         </div>
 
       </div>
+      <div class="bag-container flex">
+        <div class="bag-rest"></div>
+        <div class="bag-inner flex">
+          <div class="bag-product margin-auto flex">
+            <div class="bag-product-image">
+              <img src="images/radix-rg-bd@2x.png">
+            </div>
 
+            <div class="bag-product-info flex no-wrap">
+              <div class="bag-product-info-name">
+                <h1 class="is-maison" id="cart-product-name">Radix</h1>
+              </div>
+              <div class="bag-product-info-details">
+                <p id="cart-product-option-1">Rose Gold</p>
+                <p id="cart-product-option-2">Black Diamonds</p>
+                <p id="cart-product-size">Size M</p>
+                <p id="cart-product-qty">Qty. 1</p>
+                <h1 class="is-maison" id="cart-product-price">$1500</h1>
+              </div>
+            </div>
+          </div>
+
+          <div class="bag-cta-container general-container">
+            <div class="bag-cta-inner flex">
+              <div class="bag-cta-total">
+                <h1 class="is-maison">Total: $1500</h1>
+              </div>
+              <div class="checkout is-relative">
+                <h1 class="is-maison">Checkout</h1>
+                <div class="checkout-gold-bcgd"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
 
 
 
     </header>
 
 
+
     <div class="content">
 
       <section class="intro">
+
+
         <div class="phrases-container">
 
           <div class="phrases">
@@ -185,41 +258,75 @@
 
           </div>
         </div>
-        <div class="home-slider flex no-wrap is-relative">
-          <div class="small-slide img-container">
-            <div class="small-slide-img small-slide-1"></div>
-            <div class="small-slide-img small-slide-2"></div>
 
-            <div class="small-slide-img small-slide-3"></div>
-            <div class="small-slide-img small-slide-4"></div>
+        <div class="home-slider flex no-wrap is-relative">
+
+
+
+          <div class="small-slide img-container">
+
+            <div class="small-slide-img small-slide-4">
+              <img class="small-slide-content" src="images/small-slide-1-test.jpg"> </div>
+
+            <div class="small-slide-img small-slide-3">
+              <img class="small-slide-content" src="images/small-slide-3.jpg">
+            </div>
+            <div class="small-slide-img small-slide-2">
+              <img class="small-slide-content" src="images/small-slide-2-test.jpg">
+            </div>
+            <div class="small-slide-img small-slide-1">
+              <img class="small-slide-content" src="images/small-slider-1@2x.png">
+            </div>
           </div>
 
 
           <div class="big-slide-container">
             <div id="big-slide-img-container" class="big-slide img-container">
-              <div class="big-slide-img big-slide-1 ">
-                <!-- <div class="product-button harpa-slider flex no-wrap align-center">
-                  <h1 class="h1-button-slider">Harpa</h1>
-                  <img class="arrow" src="images/arrow.svg">
-                </div> -->
-              </div>
-              <div class="big-slide-img big-slide-2 ">
-                <!-- <div class="product-button harpa-slider flex no-wrap align-center">
-                  <h1 class="h1-button-slider">Harpa</h1>
-                  <img class="arrow" src="images/arrow.svg">
-                </div> -->
-              </div>
-              <div class="big-slide-img big-slide-3 ">
-                <!-- <div class="product-button harpa-slider flex no-wrap align-center">
-                  <h1 class="h1-button-slider">Harpa</h1>
-                  <img class="arrow" src="images/arrow.svg">
-                </div> -->
-              </div>
-              <div class="big-slide-img big-slide-4 ">
-                <!-- <div class="product-button harpa-slider flex no-wrap align-center">
-                  <h1 class="h1-button-slider">Harpa</h1>
-                  <img class="arrow" src="images/arrow.svg">
-                </div> -->
+              <div class="big-slide-img-container-inner is-relative">
+
+                <div class="big-slide-img big-slide-4">
+                  <img class="big-slide-content" src="images/big-slider-4@2xOK.jpg">
+
+                  <div class="cta-button is-absolute cta-slide-1">
+                    <div class="cta-product-name">
+                      <h1 class="is-maison">Shop HEXA</h1>
+                    </div>
+                  </div>
+
+                </div>
+
+                <div class="big-slide-img big-slide-3">
+                  <img class="big-slide-content" src="images/big-slider-3@2xOK.jpg">
+
+                  <div class="cta-button is-absolute cta-slide-1">
+                    <div class="cta-product-name">
+                      <h1 class="is-maison">Shop moxi</h1>
+                    </div>
+                  </div>
+
+                </div>
+
+                <div class="big-slide-img big-slide-2">
+                  <img class="big-slide-content" src="images/big-slider-2b@2x.jpg">
+
+                  <div class="cta-button is-absolute cta-slide-1">
+                    <div class="cta-product-name">
+                      <h1 class="is-maison">Shop pendants</h1>
+                    </div>
+                  </div>
+
+                </div>
+
+                <div class="big-slide-img big-slide-1">
+                  <img class="big-slide-content" src="images/big-slider-1@2xA.jpg">
+
+                  <div class="cta-button is-absolute cta-slide-1">
+                    <div class="cta-product-name">
+                      <h1 class="is-maison">Shop Gold Collection</h1>
+                    </div>
+                  </div>
+                </div>
+
               </div>
             </div>
           </div>
@@ -234,25 +341,27 @@
           <h1 id="will-be-typed"></h1>
         </div>
 
-        <div class="video">
-          <iframe src="https://player.vimeo.com/video/99367977?autoplay=1&title=0&byline=0&portrait=0&controls=0&sidedocs=0" width="100"
-            height="56" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-          <!-- <p>
-            <a href="https://vimeo.com/99367977"></a>
-             -->
-          <!-- <video src="videos/specimens_h264.mov" autoplay loop></video> -->
+        <div class="video-container">
+          <video src="videos/specimens_preview.mp4" autoplay loop muted></video>
+          <div class="video-hover-button">
+            <a href="#" class="is-maison">discover the spe.c.imens</a>
+          </div>
         </div>
 
       </section>
 
-      <section id="product-colections">
+      <section class="section-padding" id="product-collections">
+        <!-- <div class="most-products-text journal-title">
+          <p>Product Categories</p>
+        </div> -->
+
         <div class="products-container container text-align-center flex-inline width-100 justify-ends">
 
           <a class="product flex wrap">
             <div class="product-first-container">
               <div class="product-phi-img-container is-relative">
                 <div class="product-img is-rings is-absolute">
-                  <img src="images/product-collection-ring@2x.jpg">
+                  <img src="images/rings-collection@2x.png">
                 </div>
                 <div class="product-phi is-absolute">
                   <span></span>
@@ -263,7 +372,7 @@
               </div>
             </div>
             <div class="product-kind width-100">
-              <h2 class="is-relative">Rings</h2>
+              <p class="is-relative">Rings</p>
             </div>
           </a>
 
@@ -271,7 +380,7 @@
             <div class="product-first-container">
               <div class="product-phi-img-container is-relative">
                 <div class="product-img is-earrings is-absolute">
-                  <img src="images/product-collection-earrings@2x.jpg">
+                  <img src="images/earrings-collection@2x.png">
                 </div>
                 <div class="product-phi is-absolute">
                   <span></span>
@@ -282,7 +391,7 @@
               </div>
             </div>
             <div class="product-kind width-100">
-              <h2 class="is-relative">Earrings</h2>
+              <p class="is-relative">Earrings</p>
             </div>
           </a>
 
@@ -290,7 +399,7 @@
             <div class="product-first-container">
               <div class="product-phi-img-container is-relative">
                 <div class="product-img is-pendants is-absolute">
-                  <img src="images/product-collection-pendants@2x.jpg">
+                  <img src="images/pendants-collection@2x.png">
                 </div>
                 <div class="product-phi is-absolute">
                   <span></span>
@@ -301,7 +410,7 @@
               </div>
             </div>
             <div class="product-kind width-100">
-              <h2 class="is-relative">Pendants</h2>
+              <p class="is-relative">Pendants</p>
             </div>
           </a>
 
@@ -309,7 +418,7 @@
             <div class="product-first-container">
               <div class="product-phi-img-container is-relative">
                 <div class="product-img is-limited is-absolute">
-                  <img src="images/product-collection-ring@2x.jpg">
+                  <img src="images/grid-dna2@2x.png">
                 </div>
                 <div class="product-phi is-absolute">
                   <span></span>
@@ -320,15 +429,21 @@
               </div>
             </div>
             <div class="product-kind width-100">
-              <h2 class="is-relative">Limited Release</h2>
+              <p class="is-relative">Limited Release</p>
             </div>
           </a>
 
         </div>
 
+        <div class="view-all product-categories-cta flex text-align-center is-relative justify-center">
+          <a href="products-grid.html" class="is-maison">View All</a>
+        </div>
+
       </section>
 
-      <section>
+
+
+      <!-- <section>
         <div class="video-cover-container flex ">
           <div class="video-cover-play">
             <img src="images/play_icon.svg">
@@ -336,10 +451,13 @@
               <br>Grown</p>
           </div>
         </div>
-      </section>
+      </section> -->
 
       <section class="featured-product fp-vatna is-relative">
         <div class="featured-product-button">
+          <div class="featured-product-image">
+            <img src="images/vatna-fp-ok.jpg">
+          </div>
           <div class="product-button fp-button flex no-wrap align-center">
             <h1 class="h1-button-slider">Vatna</h1>
             <img class="arrow" src="images/arrow.svg">
@@ -355,35 +473,27 @@
           <div class="is-absolute black-overlay"></div>
           <div class="bio-text is-relative">
             <h1>Bio</h1>
-            <p><span class="is-relative bio-span-background"><span class="is-relative text-bio-span">FLOWEN</span></span> is a sculptural object-making laboratory focused on taking its designs to unforeseen levels of sophistication
+            <p>
+              <span class="is-relative bio-span-background">
+                <span class="is-relative text-bio-span">FLOWEN</span>
+              </span>is a sculptural object-making laboratory focused on taking its designs to unforeseen levels of sophistication
               and luxury.
               <br>
               <br> It is heavily influenced by the study of geology, biology, natural history and science fiction.
               <br>
-              <br> Created by designer Flavia Lowenstein, the Specimens Collection reaches into an imaginary world of new forms
-              to create Objets d’Art that redefine our perspective of Nature.
-              <br>
-              <br> The sculptural wearable art pieces are ‘digitally grown’ in 926 silver powder from digital models, thus shaping
-              raw materials through ‘additive manufacturing’.
-              <br>
-              <br> This completely seamless process has zero waste properties.
-              <br>
               <br> The introduction of computing in design and fabrication opened up the possibility of learning the processes
               and forms of evolution in nature through time.
               <br>
-              <br> Launched with an art installation exhibit during New York Fashion Week in 2015 and at the Page / La Brea Tar
-              Pits Museum in Los Angeles, FLOWEN established itself at the crossroads of art and fashion.
+              <br> The sculptural wearable art pieces are ‘digitally grown’ in 926 silver powder from digital models, thus shaping
+              raw materials through ‘Additive Metal Manufacturing’.
               <br>
-              <br> Garnering incredible feedback from the Los Angeles Times, it made its debut at Paris Fashion Week in 2016.
-              <br>
-              <br> FLOWEN was featured at the exhibition store for Manus x Machina: Fashion in the Age of Technology, for The
-              Costume Institute’s 2016 exhibit at The Metropolitan Museum of Art in New York, curated by Andrew Bolton.
-              <br>
-              <br> The pieces are plated in 18k yellow and rose gold, black ruthenium and rare black ‘gommato’ coating. Enhanced
-              with pave diamonds or sapphires.
-              <br>
-              <br> The Specimens Collection is entirely Made in Italy.
+              <br> This completely seamless process has zero waste properties.
             </p>
+            <div class="view-all bio-button product-most-cta">
+              <a href="bio.html" class="is-maison">Read More</a>
+            </div>
+
+
           </div>
         </div>
 
@@ -443,13 +553,20 @@
           </div>
 
         </div>
-      </section>
 
-      <section>
-        <div class="video-cover-container flex nature-as-imagined">
-
+        <div class="view-all product-most-cta flex text-align-center is-relative justify-center">
+          <a href="products-grid.html" class="is-maison">View All</a>
         </div>
+
       </section>
+
+      <div class="video-container">
+        <video src="videos/nature-as-imagined_1.mp4" autoplay loop muted></video>
+        <div class="video-hover-button">
+          <a href="#" class="is-maison">Nature as imagined film</a>
+        </div>
+      </div>
+
 
 
       <section class="latest-journals section-padding container">
