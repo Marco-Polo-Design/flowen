@@ -23,15 +23,41 @@
     <header>
 
       <div class="general-container is-desktop-menu flex justify-ends align-center width-100">
+        <div id="logo">
+          <a href='index.html'>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="-6515.549 81 170.098 104.194">
+              <defs>
+                <style>
+                  .cls-1 {
+                    fill: #b39559;
+                  }
+                </style>
+              </defs>
+              <g id="" transform="translate(-6515.433 80.229)">
+                <path id="Path_5" data-name="Path 5" class="cls-1" d="M-.117,31.479V54.127H1.454V44.148H12.3V42.7H1.454V32.917H13.9V31.479Z"
+                  transform="translate(0 11.079)" />
+                <path id="Path_6" data-name="Path 6" class="cls-1" d="M21.729,31.479H20.154V54.127h15.9V52.682H21.729Z" transform="translate(7.313 11.079)"
+                />
+                <path id="Path_7" data-name="Path 7" class="cls-1" d="M83.427,50.889l-6.7-19.638-.061-.179h-.506L69.407,50.889,63.6,31.625H62l7.054,23.207h.52l6.837-19.909,6.738,19.723.061.186h.522l7.052-23.207h-1.56Z"
+                  transform="translate(22.413 10.933)" />
+                <path id="Path_8" data-name="Path 8" class="cls-1" d="M93.426,43.5h10.51V42.051H93.426V32.925h11.708V31.479H91.848v22.65H105.6V52.682H93.426Z"
+                  transform="translate(33.18 11.079)" />
+                <path id="Path_9" data-name="Path 9" class="cls-1" d="M112.323,31.072v23.2H113.8V34.806l15,19.916.084.106h.526v-23.2H127.94V51.094L112.86,31.072Z"
+                  transform="translate(40.568 10.933)" />
+                <path id="Path_10" data-name="Path 10" class="cls-1" d="M51.118,63.929v-20.1a10.076,10.076,0,0,1,0,20.1ZM40.332,53.882A10.092,10.092,0,0,1,49.71,43.827v20.1a10.087,10.087,0,0,1-9.379-10.047ZM51.118,42.418V.771H49.71V42.418a11.483,11.483,0,0,0,0,22.923v39.624h1.408V65.34a11.483,11.483,0,0,0,0-22.923Z"
+                  transform="translate(14.086 0)" />
+              </g>
+            </svg>
+          </a>
+        </div>
         <div class="is-menu-toggle">
           <img src="images/menu-open.svg" </div>
         </div>
-        <div id="logo">
-          <a href="index.html">
-            <img src="images/flowen-logo.svg">
-          </a>
-        </div>
-        <div class="is-cart-toggle">
+
+        <div class="is-cart-toggle inline-flex">
+          <div class="cart-info">
+            <h1 class="is-maison">BAG</h1>
+          </div>
           <img src="images/cart-icon.svg" </div>
         </div>
 
@@ -61,35 +87,35 @@
                       </a>
                     </li>
                     <li>
-                      <a class="new-arrivals-link" href="#">
+                      <a class="new-arrivals-link" href="products-grid.html">
                         <div class="main-link">
                           <p>New Arrivals</p>
                         </div>
                       </a>
                     </li>
                     <li>
-                      <a class="earings-link" href="#">
+                      <a class="earings-link" href="products-grid.html">
                         <div class="main-link">
-                          <p>Earings</p>
+                          <p>Earrings</p>
                         </div>
                       </a>
                     </li>
                     <li>
-                      <a class="pendants-link" href="#">
+                      <a class="pendants-link" href="products-grid.html">
                         <div class="main-link">
                           <p>Pendants</p>
                         </div>
                       </a>
                     </li>
                     <li>
-                      <a class="bags-link" href="#">
+                      <a class="bags-link" href="products-grid.html">
                         <div class="main-link">
                           <p>Bags</p>
                         </div>
                       </a>
                     </li>
                     <li>
-                      <a class="limited-release-link" href="#">
+                      <a class="limited-release-link" href="products-grid.html">
                         <div class="main-link">
                           <p>Limited Release</p>
                         </div>
@@ -138,7 +164,42 @@
         </div>
 
       </div>
+      <div class="bag-container flex">
+        <div class="bag-rest"></div>
+        <div class="bag-inner flex">
+          <div class="bag-product margin-auto flex">
+            <div class="bag-product-image">
+              <img src="images/radix-rg-bd@2x.png">
+            </div>
 
+            <div class="bag-product-info flex no-wrap">
+              <div class="bag-product-info-name">
+                <h1 class="is-maison" id="cart-product-name">Radix</h1>
+              </div>
+              <div class="bag-product-info-details">
+                <p id="cart-product-option-1">Rose Gold</p>
+                <p id="cart-product-option-2">Black Diamonds</p>
+                <p id="cart-product-size">Size M</p>
+                <p id="cart-product-qty">Qty. 1</p>
+                <h1 class="is-maison" id="cart-product-price">$1500</h1>
+              </div>
+            </div>
+          </div>
+
+          <div class="bag-cta-container general-container">
+            <div class="bag-cta-inner flex">
+              <div class="bag-cta-total">
+                <h1 class="is-maison">Total: $1500</h1>
+              </div>
+              <div class="checkout is-relative">
+                <h1 class="is-maison">Checkout</h1>
+                <div class="checkout-gold-bcgd"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
 
 
 
@@ -154,68 +215,98 @@
 
             <a href="#" class="product-variant flex-inline flex-wrap">
               <div class="width-50">
-                <img src="images/product-variant-test@2x.jpg">
+                <img src="images/grid-radix@2x.png">
               </div>
               <div class="width-30">
-                <h3>RC003</h3>
+                <h3>RG001</h3>
               </div>
             </a>
+
             <a href="#" class="product-variant flex-inline flex-wrap">
               <div class="width-50">
-                <img src="images/product-variant-test@2x.jpg">
+                <img src="images/radix-g-id@2x.png">
               </div>
               <div class="width-30">
-                <h3>RC003</h3>
+                <h3>RG0I3</h3>
               </div>
             </a>
+
+
             <a href="#" class="product-variant flex-inline flex-wrap">
               <div class="width-50">
-                <img src="images/product-variant-test@2x.jpg">
+                <img src="images/radix-g-bd@2x.png">
               </div>
               <div class="width-30">
-                <h3>RC003</h3>
+                <h3>RG0B5</h3>
               </div>
             </a>
-            <a href="#" class="product-variant flex-inline flex-wrap">
+
+
+            <a href="#" class="product-variant flex-inline flex-wrap radix">
               <div class="width-50">
-                <img src="images/product-variant-test@2x.jpg">
+                <img src="images/grid-radix-br@2x.png">
               </div>
               <div class="width-30">
-                <h3>RC003</h3>
+                <h3>RB002</h3>
               </div>
             </a>
-            <a href="#" class="product-variant flex-inline flex-wrap">
+
+            <a href="#" class="product-variant flex-inline flex-wrap radix">
               <div class="width-50">
-                <img src="images/product-variant-test@2x.jpg">
+                <img src="images/radix-br-bd@2x.png">
               </div>
               <div class="width-30">
-                <h3>RC003</h3>
+                <h3>RB0I3</h3>
               </div>
             </a>
-            <a href="#" class="product-variant flex-inline flex-wrap">
+
+            <a href="#" class="product-variant flex-inline flex-wrap radix">
               <div class="width-50">
-                <img src="images/product-variant-test@2x.jpg">
+                <img src="images/radix-br-blued@2x@2x.png">
               </div>
               <div class="width-30">
-                <h3>RC003</h3>
+                <h3>RB0I4</h3>
               </div>
             </a>
-            <a href="#" class="product-variant flex-inline flex-wrap">
+
+            <a href="#" class="product-variant flex-inline flex-wrap radix">
               <div class="width-50">
-                <img src="images/product-variant-test@2x.jpg">
+                <img src="images/radix-roseg@2x.png">
               </div>
               <div class="width-30">
-                <h3>RC003</h3>
+                <h3>RR001</h3>
               </div>
             </a>
-            <a href="#" class="product-variant flex-inline flex-wrap">
+
+            <a href="#" class="product-variant flex-inline flex-wrap radix">
               <div class="width-50">
-                <img src="images/product-variant-test@2x.jpg">
+                <img src="images/radix-rg-bd@2x.png">
               </div>
               <div class="width-30">
-                <h3>RC003</h3>
+                <h3>RR0B2</h3>
               </div>
             </a>
+
+            <a href="#" class="product-variant flex-inline flex-wrap radix">
+              <div class="width-50">
+                <img src="images/radix-bg@2x.png">
+              </div>
+              <div class="width-30">
+                <h3>RBG01</h3>
+              </div>
+            </a>
+            <a href="#" class="product-variant flex-inline flex-wrap radix">
+              <div class="width-50">
+                <img src="images/radix-bg-iced@2x.png">
+              </div>
+              <div class="width-30">
+                <h3>RBGI1</h3>
+              </div>
+            </a>
+
+
+
+
           </div>
         </div>
 
@@ -232,13 +323,13 @@
                   <p>Scroll</p>
                 </div>
                 <div class="main-img-inner-img">
-                  <img id="featured-img" src="images/exo@2x.jpg">
+                  <img id="featured-img" src="images/radix-xray@2x.png">
                 </div>
                 <div class="main-img-inner-img">
-                  <img id="secondary-img" src="images/exo@2x.jpg">
+                  <img id="secondary-img" src="images/radix-lifestyle-1@2x.png">
                 </div>
                 <div class="main-img-inner-img">
-                  <img id="third-img" src="images/exo@2x.jpg">
+                  <img id="third-img" src="images/radix-lifestyle-2@2x.png">
                 </div>
               </div>
             </div>
@@ -260,7 +351,9 @@
         <div class="product-info-container flex flex-column ">
           <div class="product-info-inner ">
             <div class="back-to-products product-info-inner-padding">
-              <h2>Products > Clutches > Exo</h2>
+              <a href="products-grid.html">
+                <h2>Products > Rings > Radix</h2>
+              </a>
             </div>
           </div>
 
@@ -283,8 +376,8 @@
 
           <div class="product-chosen-container">
             <div class="product-chosen-options product-info-inner-padding">
-              <p id="option-1">Red Nappa Leather</p>
-              <p id="option-2">925 sterling silver</p>
+              <p id="option-1">24k Gold Coat</p>
+              <p id="option-2">No Diamonds</p>
               <a>Clear Selection</a>
             </div>
           </div>
@@ -316,7 +409,7 @@
               </div>
               <a class="add-to-cart-button width-50 flex no-wrap">
                 <div class="add-to-cart-button-inner">
-                  <p id="add-to-cart">Add to cart</p>
+                  <p id="add-to-cart">Add to bag</p>
                 </div>
                 <div class="add-to-cart-bcgd"></div>
                 <div class="add-to-cart-bcgd-gold"></div>
@@ -331,11 +424,203 @@
       </div>
 
     </section>
+
+    <section class="details" id="details-waypoint">
+
+      <div class="details-inner flex width-100 is-relative ">
+
+        <div class="details-summary-container  is-sticky">
+          <div class="details-summary-inner summary-padding  flex flex-column">
+            <div class=" summary-div-after is-relative">
+              <div class="summary-product summary-div-container flex justify-ends align-items-center">
+                <div class="width-40">
+                  <img src="images/grid-radix@2x.png">
+                </div>
+                <div class="width-50">
+                  <h1 class="">Radix</h1>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="summary-div-after is-relative">
+              <div class="summary-description summary-div-container">
+                <div class="">
+                  <div class="flex flex-column">
+                    <div style="margin:auto; margin-left:0;">
+                      <p id="product-description-summary">925 sterling silver powder digitally grown</p>
+                      <p id="product-sku-summary">Product Code: RR001</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="summary-div-after is-relative">
+              <div class="summary-options-container summary-div-container">
+                <div class="summary-options flex no-wrap">
+                  <p id="option-1-summary">24k Gold Coat</p>
+                  <p id="option-2-summary">No Diamonds</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="summary-div-after is-relative">
+              <div class="summary-size-container summary-div-container">
+                <div class="summary-size flex no-wrap">
+                  <p id="size-summary">Size M</p>
+                  <a id="view-size-summary">View size chart</a>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="summary-div-addtocart is-relative">
+              <div class="summary-addtocart-container">
+                <div class="summary-addtocart-inner flex no-wrap width-100">
+                  <div class="price price-summary width-50">
+                    <h1 id="product-price-summary">$1500</h1>
+                  </div>
+                  <a class="add-to-cart-button width-50 flex no-wrap">
+                    <div class="add-to-cart-button-inner">
+                      <p id="add-to-cart">Add to bag</p>
+                    </div>
+                    <div class="add-to-cart-bcgd"></div>
+                    <div class="add-to-cart-bcgd-gold"></div>
+
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="details-aob-container ">
+          <div class="details-aob-inner ">
+            <div class="detail flex no-wrap ">
+              <div class="detail-name ">
+                <h1>ABOUT THE PRODUCT
+                </h1>
+              </div>
+              <div class="detail-info ">
+                <p>The Radix Ring is an intricate Specimen in Flowen’s taxonomy. Only 166 of these will ever exist. Its distinctive
+                  exoskeleton demonstrates its innovative craftsmanship, as it seamlessly encases its body to dramatically
+                  expose its interior. The golden front end unmasks the cavity while the back end holds the inside. The inventive
+                  integration of exposed cellular webbing and nappa leather uses the golden ratio proportion that resonates
+                  through the Flowen collection. Its push clasp features the Phi logo detail. It is sculpted in Italy.</p>
+
+
+              </div>
+            </div>
+
+            <div class="detail flex no-wrap ">
+              <div class="detail-name ">
+                <h1>Materials Used
+                </h1>
+              </div>
+              <div class="detail-info ">
+                <p>This product uses Red Nappa Leather from Germany. The rest onwards is placeholder text to show Flavia and
+                  the Fl-o-wen team what items we consider that would be good to include here, in order to give the client
+                  more confidence at the time of purchasing any of the otherwordly products that Fl-o-wen produces. Darwin
+                  would be proud.</p>
+
+
+              </div>
+            </div>
+
+            <div class="detail flex no-wrap ">
+              <div class="detail-name ">
+                <h1>Shipping Information
+                </h1>
+              </div>
+              <div class="detail-info ">
+                <p>All our international shipments are fully insured and will be shipped 3-4 days after payment. We use DHL
+                  for regular shipping, items shipped from Los Angeles, United States and it takes around 1-3 weeks getting
+                  to the US, and 8-28 days to Europe, whilst not all of europe gets ECO post.</p>
+
+
+              </div>
+            </div>
+            <div class="detail flex no-wrap ">
+              <div class="detail-name ">
+                <h1>Customer Satisfaction
+                </h1>
+              </div>
+              <div class="detail-info ">
+                <p>All our international shipments are fully insured and will be shipped 3-4 days after payment. We use DHL
+                  for regular shipping, items shipped from Los Angeles, United States and it takes around 1-3 weeks getting
+                  to the US, and 8-28 days to Europe, whilst not all of europe gets ECO post. All our international shipments
+                  are fully insured and will be shipped 3-4 days after payment. We use DHL for regular shipping, items shipped
+                  from Los Angeles, United States and it takes around 1-3 weeks getting to the US, and 8-28 days to Europe,
+                  whilst not all of europe gets ECO post.</p>
+
+
+              </div>
+            </div>
+
+            <div class="related-products-container">
+              <div class="related-products-container-inner">
+                <div class="detail flex no-wrap align-items-center">
+                  <div class="detail-name ">
+                    <h1>Related products
+                    </h1>
+                  </div>
+
+                  <div class="related-products-inner flex ">
+
+                    <div class="related-product flex">
+                      <div class="related-product-container">
+                        <img class="related-img" src="images/grid-moxi-bg@2x.png">
+                        <a>Moxi</a>
+                      </div>
+
+                    </div>
+
+                    <div class="related-product flex">
+                      <div class="related-product-container">
+                        <img class="related-img" src="images/grid-vik@2x.png">
+                        <a>Vik</a>
+                      </div>
+
+                    </div>
+
+                    <div class="related-product flex">
+                      <div class="related-product-container">
+                        <img class="related-img" src="images/grid-dna2@2x.png">
+                        <a>DNA II</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <div class="view-all product-template-cta flex text-align-center is-relative justify-center">
+      <a href="products-grid.html" class="is-maison">View All</a>
+    </div>
+
+    <!-- <section class="is-footer flex width-100 text-align-center">
+      <div class="margin-auto is-footer-inner">
+        <h2 class="is-maison">FLOWEN</h2>
+        <h2 class="is-maison">ALL RIGHTS RESERVED</h2>
+      </div>
+
+    </section> -->
+
+
   </div>
 
-  <script src="jquery.js"></script>
-
-  <script src="main.js"></script>
+  <script src="jquery.js "></script>
+  <script src="main.js "></script>
+  <script src="jquery.waypoints.min.js "></script>
   </div>
 </body>
 
