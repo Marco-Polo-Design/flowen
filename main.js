@@ -886,6 +886,7 @@ function openProductChosen() {
         });
 
       $('#featured-img').fadeIn(500);
+      setXrayImage();
     });
   }
 
@@ -922,7 +923,7 @@ function openProductChosen() {
           'max-width': '280px'
         });
       $('#featured-img').fadeIn(500);
-
+      setXrayImage();
       return false;
     });
   }
