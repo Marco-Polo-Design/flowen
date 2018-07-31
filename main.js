@@ -753,6 +753,11 @@ function openProductChosen() {
       $('.product-variants a:hover').css('opacity', '1');
 
       $(productClicked).css('opacity', '1');
+      
+      // fill product chosen container with selected product data
+      $('.product-variants a').removeClass('selected');
+      $(productClicked).addClass('selected');
+      fillProductChosen();
 
       // make the .main-img-inner-scroll-inner overflow: scroll
 
@@ -786,8 +791,7 @@ function openProductChosen() {
         .css({
           display: 'none',
           'max-width': '350px'
-        })
-        .attr('src', 'images/grid-radix@2x.png');
+        });
       $('#featured-img').fadeIn(500);
 
       //
@@ -803,7 +807,11 @@ function openProductChosen() {
       // $('.product-variants a:hover').css('opacity', '1');
 
       $(productClicked).css('opacity', '1');
-
+      
+      // fill product chosen container with selected product data
+      $('.product-variants a').removeClass('selected');
+      $(productClicked).addClass('selected');
+      fillProductChosen();
       // make the .main-img-inner-scroll-inner overflow: scroll
 
       $('.main-img-inner-scroll-inner').css('overflow', 'scroll');
@@ -822,9 +830,7 @@ function openProductChosen() {
         .css({
           display: 'none',
           'max-width': '280px'
-        })
-        .attr('src', 'images/grid-radix@2x.png');
-
+        });
       $('#featured-img').fadeIn(500);
 
       return false;
@@ -862,6 +868,9 @@ function openProductChosen() {
       // remove opacity from product-variants a
       $('.product-variants a').css('opacity', '');
 
+      // remove selected attriubte class from all products
+      $('.product-variants a').removeClass('selected');
+
       //
       $('div.product-chosen-options').css('transition-delay', '1s');
       $('div.product-chosen-options').css('opacity', '1');
@@ -892,6 +901,9 @@ function openProductChosen() {
 
       //Change all opacity of variants to original
       $('.product-variants a').css('opacity', '0.4');
+
+      // remove selected attriubte class from all products
+      $('.product-variants a').removeClass('selected');
 
       //Hide the "scroll" at the bottom
       $('.scroll-img p').css({
