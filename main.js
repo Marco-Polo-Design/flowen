@@ -883,9 +883,6 @@ function openProductChosen() {
         .css({
           display: 'none',
           'max-width': '400px'
-        })
-        .attr({
-          src: 'images/radix-xray@2x.png'
         });
 
       $('#featured-img').fadeIn(500);
@@ -923,9 +920,6 @@ function openProductChosen() {
         .css({
           display: 'none',
           'max-width': '280px'
-        })
-        .attr({
-          src: 'images/radix-xray@2x.png'
         });
       $('#featured-img').fadeIn(500);
 
