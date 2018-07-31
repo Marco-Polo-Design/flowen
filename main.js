@@ -687,9 +687,6 @@ $(document).ready(function () {
         .css({
           display: 'none',
           'max-width': '280px'
-        })
-        .attr({
-          src: 'images/exo@2x.jpg'
         });
       $('#featured-img').fadeIn(500);
 
