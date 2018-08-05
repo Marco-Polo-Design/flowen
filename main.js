@@ -759,6 +759,12 @@ function openProductChosen() {
       $(productClicked).addClass('selected');
       fillProductChosen();
 
+      // fill product chosen container with selected product data
+
+      $('.product-variants a').removeClass('selected');
+      $(productClicked).addClass('selected');
+      fillProductChosen();
+
       // make the .main-img-inner-scroll-inner overflow: scroll
 
       $('.main-img-inner-scroll-inner').css('overflow-y', 'scroll');
@@ -812,6 +818,7 @@ function openProductChosen() {
       $('.product-variants a').removeClass('selected');
       $(productClicked).addClass('selected');
       fillProductChosen();
+
       // make the .main-img-inner-scroll-inner overflow: scroll
 
       $('.main-img-inner-scroll-inner').css('overflow', 'scroll');
@@ -886,7 +893,7 @@ function openProductChosen() {
         });
 
       $('#featured-img').fadeIn(500);
-      setXrayImage();
+      clearSelection();
     });
   }
 
@@ -923,7 +930,7 @@ function openProductChosen() {
           'max-width': '280px'
         });
       $('#featured-img').fadeIn(500);
-      setXrayImage();
+      clearSelection();
       return false;
     });
   }
