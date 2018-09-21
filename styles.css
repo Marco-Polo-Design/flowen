@@ -423,10 +423,6 @@ img.mw-100 {
   background-image: url(images/home-menu-bcgd.jpg);
 }
 
-.for-new-arrivals {
-  background-image: url(images/big-slide-2a@2x.jpg);
-}
-
 .for-pendants {
   background-image: url(images/pendants-menu-bcgd.jpg);
 }
@@ -435,8 +431,8 @@ img.mw-100 {
   background-image: url(images/earings-menu-bcgd.jpg);
 }
 
-.for-bags {
-  background-image: url(images/bags-menu-bcgd.jpg);
+.for-rings {
+  background-image: url(images/big-slide-2a@2x.jpg);
 }
 
 .for-limited-release {
@@ -2406,6 +2402,14 @@ a.size-is-active {
   color: #b4965a;
 }
 
+/* New classes para el animation cuando elegis variant y size */
+
+.add-to-cart-button  {
+  transition: all 0.45s cubic-bezier(0.45, 0.25, 0.25, 0.95);
+  border-left: 1px solid #999;
+  cursor: not-allowed;
+}
+
 .add-to-cart-bcgd,
 .add-to-cart-bcgd-gold {
   background-color: #000;
@@ -2417,6 +2421,7 @@ a.size-is-active {
 }
 
 .add-to-cart-bcgd-gold {
+  opacity: 0;
   background-color: #b4965a;
   transform: translateY(0%);
   transform: scaleY(0);
@@ -2427,6 +2432,7 @@ a.size-is-active {
 .animate-up {
   transform: translateY(0%);
   transition-delay: 650ms;
+  
 }
 
 .add-to-cart-button:hover .add-to-cart-bcgd-gold {
@@ -2450,6 +2456,8 @@ a.size-is-active {
   font-size: 12px;
   letter-spacing: 2px;
   text-align: left;
+  color: #b2b2b2;
+  /* transition-delay: 0.6s; */
 }
 
 .product-chosen-option:after {
