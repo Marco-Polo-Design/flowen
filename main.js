@@ -945,11 +945,12 @@ function openCart() {
         $(bagCTA).toggleClass('bag-cta-open');
         $('.menu-nav').css('z-index', '89');
         $('.bag-container').css('z-index', '90');
+        $('header').toggleClass('no-background')
 
         if ($('.bag-container').hasClass('bag-container-open')) {
             detailsAOB.forEach(function (detailsAOB, index) {
                 const delay = index * 50;
-                detailsAOB.style.transitionDelay = delay + 1100 + 'ms';
+                detailsAOB.style.transitionDelay = delay + 600 + 'ms';
             });
             $(bagCTA).css('transition-delay', '1.6s');
             // bagCTA.forEach(function (bagCTA, index) {
