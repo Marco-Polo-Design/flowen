@@ -642,13 +642,15 @@ h1.h1-button-slider {
 img.arrow {
   height: 12px;
   opacity: 0;
-  transition: opacity 0.3s 0s, margin-right 0.3s 0s, display 0.3s 0.3s cubic-bezier(0.95, 0.2, 0.2, 0.95);
+  transition: opacity 0.3s 0s, margin-right 0.3s 0s,
+    display 0.3s 0.3s cubic-bezier(0.95, 0.2, 0.2, 0.95);
 }
 
 .product-button:hover img.arrow {
   opacity: 1;
   margin-right: 10px;
-  transition: opacity 0.3s 0.3s, margin-right 0.3s 0s, display 0.3s 0.3s cubic-bezier(0.95, 0.2, 0.2, 0.95);
+  transition: opacity 0.3s 0.3s, margin-right 0.3s 0s,
+    display 0.3s 0.3s cubic-bezier(0.95, 0.2, 0.2, 0.95);
 }
 
 .product-button:hover {
@@ -981,7 +983,7 @@ si quiero que dure 3.5s cada una, hay que sumarle 2.5s ( animacion in + animaciÃ
 .cta-button {
   border: 2px solid #b4965a;
   padding: 12px 15px;
-  transition: all 0.3s cubic-bezier(0.95, 0.25, 0.25, 0.95);
+  transition: all 0.5s cubic-bezier(0.95, 0.25, 0.25, 0.95);
   cursor: pointer;
   bottom: 5%;
   right: 5%;
@@ -994,12 +996,14 @@ si quiero que dure 3.5s cada una, hay que sumarle 2.5s ( animacion in + animaciÃ
   /* border-bottom: none; */
 }
 
-.cta-button:hover .cta-product-name h1 {
+.cta-button:hover .cta-product-name h1,
+.cta-button:hover a.bio-button:hover {
   opacity: 1;
   color: #000;
 }
 
-.cta-product-name h1 {
+.cta-product-name h1,
+a.bio-button {
   color: #b4965a;
   /* opacity: 0.6; */
   transition: all 0.5s cubic-bezier(0.95, 0.2, 0.2, 0.95);
@@ -2441,7 +2445,6 @@ a.size-is-active {
 .animate-up {
   transform: translateY(0%);
   transition-delay: 650ms;
-
 }
 
 .add-to-cart-button:hover .add-to-cart-bcgd-gold {
@@ -2866,7 +2869,6 @@ img.related-img {
   justify-content: space-between;
   border: 1px solid #9999;
   border-top: none;
-
 }
 
 .bag-inner-open {
@@ -2886,17 +2888,14 @@ img.related-img {
 
 .bag-product-image {
   background-color: #fff;
- 
+
   transition: all 0.5s 0.3s cubic-bezier(0.95, 0.25, 0.25, 0.95);
   margin-top: auto;
   margin-bottom: auto;
   width: 50%;
 }
 
-.bag-product-image-open {
-  
-
-}
+.bag-product-image-open {}
 
 .bag-product-image img {
   margin: auto;
@@ -2925,8 +2924,6 @@ img.related-img {
   color: #717171;
 }
 
-
-
 .bag-product-info-details-open:after {
   transform: scaleY(1);
 }
@@ -2936,9 +2933,6 @@ img.related-img {
   width: 100%;
   color: #000;
 }
-
-
-
 
 .bag-product-info-name h1 {
   font-size: 18px;
@@ -2986,7 +2980,7 @@ img.related-img {
 }
 
 .bag-cta-inner>div {
-  width: 50%
+  width: 50%;
 }
 
 .bag-cta-inner h1 {
@@ -3002,7 +2996,6 @@ img.related-img {
   /* margin: 0 18.3px; */
 }
 
-
 .checkout h1 {
   padding: 15px;
 }
@@ -3013,7 +3006,7 @@ img.related-img {
 
 .bag-cta-inner div:last-child h1:last-child {
   border-left: none;
-  text-align: right
+  text-align: right;
 }
 
 .bag-product-info-details-children-open {
@@ -3069,6 +3062,87 @@ img.related-img {
 
 .bio-intro-img-left img {
   max-width: 60vh;
+}
+
+.bio-cover-img img {
+  min-height: 100%;
+}
+
+.bio-cover-img {
+  padding-left: 10%;
+}
+
+.bio-starter {
+  padding-top: 14.5vh;
+}
+
+.bio-title {
+  font-size: 22px;
+}
+
+.bio-intro-text {
+  margin-left: 0;
+}
+
+.oxa-bg,
+.expo-1-bg,
+.digitally-grown-bg,
+.crossroads-bg {
+  background-image: url('images/oxa-bio-full@2x.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.crossroads-bg {
+  background-image: url('images/crossroads-bg@2x.jpg');
+}
+
+.bio-heavily-bg {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding-top: 150px;
+  padding-bottom: 150px;
+}
+
+.expo-1-bg {
+  background-image: url('images/expo-1-bg@2x.jpg');
+  background-position: center center;
+  height: 75vh;
+}
+
+.digitally-grown-bg {
+  background-image: url('images/digitally-grown.jpg');
+}
+
+.lh-2-1 {
+  line-height: 2.1;
+}
+
+.bio-gif {
+  padding-left: 25%;
+  padding-right: 25%;
+}
+
+.bio-digitally-bg {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding-top: 250px;
+  padding-bottom: 250px;
+}
+
+img.play-video-bio-button {
+  display: block;
+  width: 120px;
+}
+
+.hexa-bio-text {
+  margin-bottom: 80px;
+}
+
+.lady-items {
+  height: 60%;
+}
+
+.bio-end-bg {
+  background-image: url('images/bio-end-bg@2x.jpg');
 }
 
 @media (min-height: 900px) {
@@ -3907,7 +3981,6 @@ img.related-img {
     flex-direction: column;
     justify-content: space-between;
     transition: all 0.5s 1s cubic-bezier(0.95, 0.25, 0.25, 0.95);
-
   }
 
   .bag-inner-open {
@@ -3970,7 +4043,6 @@ img.related-img {
     text-align: center;
   }
 
-
   #cart-product-price {
     width: 100%;
     text-align: center;
@@ -4027,6 +4099,93 @@ img.related-img {
   .small-slide-img img {
     height: auto;
     width: 100%;
+  }
+
+  .bio-cover-img img {
+    min-height: unset;
+    height: 100%;
+  }
+
+  .text-bio-mobile>div {
+    width: 100%;
+  }
+
+  .text-bio-mobile {
+    flex-wrap: wrap;
+  }
+
+  .bio-intro-text {
+    margin-left: auto;
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .bio-heavily-bg {
+    width: 100%;
+    padding: 7%;
+
+  }
+
+  .oxa-bg {
+    background-position: center;
+  }
+
+  .bio-mv-mobile {
+    margin-top: 150px;
+    margin-bottom: 150px;
+  }
+
+  .expo-1-bg {
+    height: 40vh;
+  }
+
+  .bio-div-mobile>div {
+    width: 100%;
+
+  }
+
+  .bio-div-mobile {
+    flex-wrap: wrap;
+  }
+
+
+  .bio-div-mobile p,
+  p.tc-mobile-bio {
+    text-align: center;
+  }
+
+  p.tc-mobile-bio {
+    padding-left: 0;
+  }
+
+  .bio-p-mt-mobile {
+    margin-top: 40px;
+    width: 62%;
+  }
+
+  .bio-digitally-bg {
+    width: 100%;
+  }
+
+  .digitally-grown-bg div.width-62 {
+    display: none;
+  }
+
+  img.bio-padding-mobile {
+    padding: 0;
+  }
+
+  .no-margin-top-mobile {
+    margin-top: 0;
+  }
+
+  .height-unset {
+    height: unset;
+    margin: initial;
+  }
+
+  .bio-starter {
+    height: 300px;
   }
 }
 

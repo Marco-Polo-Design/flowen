@@ -357,7 +357,7 @@ function openNav() {
             ).removeClass('is-not-visible');
 
             // Remove background from header (for product template's)
-            $('header').css('background-color', 'initial');
+            // $('header').css('background-color', 'initial');
         }
         // Mobile for closed animations
         else if ($('.menu-nav-bcgd').hasClass('is-nav-closed') && $(window).width() < 414) {
@@ -945,7 +945,13 @@ function openCart() {
         $(bagCTA).toggleClass('bag-cta-open');
         $('.menu-nav').css('z-index', '89');
         $('.bag-container').css('z-index', '90');
-        $('header').toggleClass('no-background')
+
+
+        if (!$('section').hasClass('product-dashboard')) {
+            $('header').toggleClass('no-background');
+        }
+
+
 
         if ($('.bag-container').hasClass('bag-container-open')) {
             detailsAOB.forEach(function (detailsAOB, index) {

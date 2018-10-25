@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 121.652">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #d6b36c;
+        font-size: 16px;
+        font-family: MaisonNeue-Medium, Maison Neue;
+        font-weight: 500;
+        letter-spacing: 0.2em;
+      }
+
+      .cls-2, .cls-5 {
+        fill: none;
+      }
+
+      .cls-2 {
+        stroke: #b4965a;
+        stroke-width: 2px;
+      }
+
+      .cls-3 {
+        fill: #b4965a;
+      }
+
+      .cls-4 {
+        stroke: none;
+      }
+    </style>
+  </defs>
+  <g id="Group_631" data-name="Group 631" transform="translate(-619 -3430.348)">
+    <text id="DIGITALLY_GROWN" data-name="DIGITALLY
+GROWN" class="cls-1" transform="translate(669 3522)"><tspan x="-49.179" y="0">DIGITALLY</tspan><tspan x="-34.959" y="25">GROWN</tspan></text>
+    <g id="Group_626" data-name="Group 626" transform="translate(71.543 196.984)">
+      <g id="Ellipse_13" data-name="Ellipse 13" class="cls-2" transform="translate(568 3233.363)">
+        <circle class="cls-4" cx="29.326" cy="29.326" r="29.326"/>
+        <circle class="cls-5" cx="29.326" cy="29.326" r="28.326"/>
+      </g>
+      <path id="Path_159" data-name="Path 159" class="cls-3" d="M-4506.406,4084.875v19.177l15.008-9.658Z" transform="translate(5098.073 -831.085)"/>
+    </g>
+  </g>
+</svg>
