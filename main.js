@@ -67,15 +67,15 @@ function animateProductLines() {
     // Remove animations if widow is bigger than iPad Mini Version
     if ($(window).width() >= 768) {
         $(productChosenLines).removeClass('animate-left');
-    } else { }
+    } else {}
 
     if ($(window).width() <= 768) {
         $('.is-second-border').css('transform', 'scaleX(1)');
-    } else { }
+    } else {}
 
     if ($(window).width() <= 414) {
         $('.is-first-border').css('transform', 'scaleX(1)');
-    } else { }
+    } else {}
 }
 
 function addBigContainer() {
@@ -1077,5 +1077,5 @@ $(document).on('scroll', () => {
         }
 
         $('.js-scroll-slow-2').css('top', pixelsForBioOK * -0.195);
-    } else { }
+    } else {}
 });

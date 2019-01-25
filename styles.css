@@ -3077,7 +3077,7 @@ img.related-img {
 }
 
 .bio-title {
-  font-size: 22px;
+  font-size: 42px;
 }
 
 .bio-intro-text {
@@ -3101,6 +3101,15 @@ img.related-img {
   background-color: rgba(0, 0, 0, 0.7);
   padding-top: 150px;
   padding-bottom: 150px;
+}
+
+.bio-heavely-img-bg {
+  background-image: url('images/bio-crossroads-small@2x.jpg');
+}
+
+
+.lady-items p, .bio-text-right p {
+margin-right: 15vw;
 }
 
 .expo-1-bg {
@@ -3514,13 +3523,13 @@ img.play-video-bio-button {
   }
 
   .bag-product-image {
-    transform: scaleY(0);
+    
     transform-origin: top;
     margin: unset;
   }
 
   .bag-product-image-open {
-    transform: scaleY(1);
+    
   }
 
   .bag-cta-container {
@@ -3534,8 +3543,44 @@ img.play-video-bio-button {
   .preloader-container {
     display: none;
   }
-}
 
+  .menu-nav {
+    top: 117.734px;
+    height: unset;
+  }
+
+  .bag-container {
+    height: unset;
+    min-height: unset;
+    transform: unset;
+    right: unset;
+    top: 117.734px;
+  }
+
+  .bag-product {
+    height: unset;
+    width: 100%;
+  }
+
+  .bag-product-image img {
+    padding: 0px 120px;
+    width: 100%;
+  }
+
+  .bag-product-info {
+    border-top: 1px solid #999;
+    border-left: 0;
+    width: 100%;
+  }
+
+  .bag-product-info-name h1 {
+    text-align: center;
+  }
+
+  .bag-product-info-details {
+    margin: 0; 
+  }
+}
 @media (max-width: 414px) {
   .intro {
     overflow: hidden;
@@ -4074,8 +4119,6 @@ img.play-video-bio-button {
 
   .bag-container {
     width: 100%;
-    height: 100vh;
-    min-height: 100vh;
     position: fixed;
     z-index: 90;
     pointer-events: none;
@@ -4086,11 +4129,7 @@ img.play-video-bio-button {
     pointer-events: all;
   }
 
-  .bag-product-image img {
-    width: 100%;
-    padding: 50px 120px;
-    margin: auto;
-  }
+  
 
   .checkout {
     width: 100%;
@@ -4141,7 +4180,7 @@ img.play-video-bio-button {
 
   .bio-div-mobile>div {
     width: 100%;
-
+margin: auto;
   }
 
   .bio-div-mobile {
@@ -4152,10 +4191,14 @@ img.play-video-bio-button {
   .bio-div-mobile p,
   p.tc-mobile-bio {
     text-align: center;
+    margin: auto;
   }
 
   p.tc-mobile-bio {
     padding-left: 0;
+    padding-right: 0;
+
+    margin: auto;
   }
 
   .bio-p-mt-mobile {
